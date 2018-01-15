@@ -7,6 +7,7 @@
 
 	<typeAliases>
 		<!-- 앞으로 com.kobook.domain은 안써도 됨 -->
+		<package name="com.bjs.cinema.domain"/>
 	</typeAliases>
 
 </configuration>
