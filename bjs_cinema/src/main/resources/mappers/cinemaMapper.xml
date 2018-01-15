@@ -6,7 +6,7 @@
 
 <mapper namespace="com.bjs.mappers.cinemaMapper">
 
-	<insert id="cinemaInsert" parameterType="cinemaVO">
+	<insert id="cinemaInsert" parameterType="CinemaVO">
 		insert into black(
 		black_id, black_title, black_date, black_content, black_email,
 		person_id
