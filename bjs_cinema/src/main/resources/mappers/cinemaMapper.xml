@@ -7,12 +7,10 @@
 <mapper namespace="com.bjs.mappers.cinemaMapper">
 
 	<insert id="cinemaInsert" parameterType="CinemaVO">
-		insert into black(
-		black_id, black_title, black_date, black_content, black_email,
-		person_id
+		insert into cinema(
+		cinema_id, cinema_region, cinema_kind, cinema_outlook, cinema_seat
 		)values(
-		black_id_seq.nextval, #{black_title}, SYSDATE, #{black_content}
-		, #{black_email}, #{person_id}
+		cinema_id_seq.nextval, #{cinema_region}, #{cinema_kind}, #{cinema_outlook}, #{cinema_seat}
 		)
 	</insert>
 	
