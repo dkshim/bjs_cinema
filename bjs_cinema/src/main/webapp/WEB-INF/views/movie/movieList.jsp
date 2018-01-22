@@ -205,15 +205,23 @@
         <section>
         	<h2>무비차트</h2>
 
-			<div class="moving">
-				<input type="checkbox" name="movie_option" value="movie">현재 상영작만 보기
-
-					<select style="direction:rtl;">
-						<option name="movie_option_type" value="예매율순" label="예매율순">
-						<option name="movie_option_type" value="평점순" label="평점순">
-						<option name="movie_option_type" value="관람객순" label="관람객순">
-					</select>
-			<button>GO</button></div>
+		<!-- //Heading Map Multi -->
+        <!-- Sorting -->
+        <div class="sect-sorting">
+             <div class="nowshow">
+                        <input type="checkbox" id="chk_nowshow"  title="현재 선택됨" checked/>
+            
+                <label for="chk_nowshow">현재 상영작만 보기</label>                
+            </div>
+            <label for="order_type" class="hidden">정렬</label>
+            <select id="order_type" name="order-type">
+				<option title="현재 선택됨" selected value="1">예매율순</option>
+                <option value="2">평점순</option>
+                <option value="3">관람객순</option>
+            </select>
+            <button type="button" class="round gray"><span>GO</span></button>
+        </div>
+        <!-- //Sorting -->
 
         </section>
 
