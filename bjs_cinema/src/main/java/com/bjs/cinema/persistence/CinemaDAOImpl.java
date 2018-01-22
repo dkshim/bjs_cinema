@@ -1,4 +1,4 @@
-package com.bjs.cinema.persistance;
+package com.bjs.cinema.persistence;
 
 import org.apache.ibatis.session.SqlSession;
 
