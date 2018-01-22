@@ -83,9 +83,7 @@
 							</div>
 							<div class="form-group">
 								<label>문의 내용 작성</label><br>
-								<textarea rows="10" cols="73" class="form-control" name="qna_content">
-								문의 내용 작성
-								</textarea>
+								<textarea rows="10" cols="73" class="form-control" name="qna_content" placeholder="문의 내용 작성"></textarea>
 							</div>
 							<div class="form-group">
 								<input type="submit" class="btn btn-default btn-lg button"
