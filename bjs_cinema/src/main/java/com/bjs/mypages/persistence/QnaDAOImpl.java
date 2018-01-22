@@ -16,7 +16,7 @@ public class QnaDAOImpl implements QnaDAO {
 	
 	@Override
 	public void qnaInsert(QnaVO vo) throws Exception {
-		session.insert(namespace+".qnaInsert" + vo);
+		session.insert(namespace+".qnaInsert", vo);
 	}
 
 }
