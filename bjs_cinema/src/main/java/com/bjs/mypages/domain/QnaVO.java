@@ -1,8 +1,9 @@
 package com.bjs.mypages.domain;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class QnaVO {
+public class QnaVO  implements Serializable{
 	private int qna_id;
 	private Timestamp qna_date;
 	private String qna_content;
