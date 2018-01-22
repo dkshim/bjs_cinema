@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
@@ -185,212 +190,34 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="page_title">
-                            <h2>Portfolio 3 Columns</h2>
+                            <h2>CGV</h2>
                         </div>
                         <nav id="breadcrumbs">
                             <ul>
-                                <li><a href="index.html">Home</a>/</li>
-                                <li>Portfolio</li>
+                                <li><a href="index.html">영화</a>/</li>
+                                <li>무비차트</li>/<li>무비차트</li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
         </section>
+        <section>
+        	<h2>무비차트</h2>
 
-		<section class="content portfolio medium-images">
-			<div class="container">
-				<div class="row sub_content">
-                    <div class="col-lg-12 isotope">
-                        <!--begin portfolio filter -->
-                        <ul id="filter">
-                            <li data-filter="*" class="selected"><a href="#">All</a></li>
-                            <li data-filter=".responsive"><a href="#">Responsive</a></li>
-                            <li data-filter=".mobile"><a href="#">Mobile</a></li>
-                            <li data-filter=".branding"><a href="#">Branding</a></li>
-                        </ul>
-                        <!--end portfolio filter -->
+			<div class="moving">
+				<input type="checkbox" name="movie_option" value="movie">현재 상영작만 보기
 
-                        <!--begin portfolio_list -->
-                        <ul id="list" class="portfolio_list clearfix ">
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_1.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_1.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Technology</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
+					<select style="direction:rtl;">
+						<option name="movie_option_type" value="예매율순" label="예매율순">
+						<option name="movie_option_type" value="평점순" label="평점순">
+						<option name="movie_option_type" value="관람객순" label="관람객순">
+					</select>
+			<button>GO</button></div>
 
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6 mobile">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_2.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_2.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Mobile</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
+        </section>
 
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6 responsive">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_3.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_3.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Responsive</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
-
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6 branding">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_4.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_4.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Branding</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
-
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_5.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_5.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Technology</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
-
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6 mobile">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_6.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_6.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Mobile</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
-
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6 responsive">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_7.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_7.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Responsive</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
-
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6 branding">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_8.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_8.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Branding</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
-
-                            <!--begin List Item -->
-                            <li class="list_item col-lg-4 col-md-6 col-sm-6 branding">
-                                <div class="recent-item box">
-                                    <figure class="touching ">
-                                        <img src="images/portfolio/portfolio_9.png" alt=""/>
-                                        <div class="option inner">
-                                            <div>
-                                                <h5>Touch and Swipe</h5>
-                                                <a href="images/portfolio/full/portfolio_9.png" class="fa fa-search mfp-image"></a>
-                                                <a href="portfolio_single.html" class="fa fa-link"></a>
-                                                <span>Branding</span>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </li>
-                            <!--end List Item -->
-                        </ul> <!--end portfolio_list -->
-                    </div>
-                    <!--end isotope -->
-                    <div class="col-sm-12 text-center">
-                        <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul>
-                    </div>
-				</div> <!--./row-->
-			</div> <!--./div-->
-		</section>
+		
 	</section>
 	<!--end wrapper-->
 	
