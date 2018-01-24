@@ -1,5 +1,7 @@
 package com.bjs.mypages.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -15,5 +17,10 @@ public class QnaServiceImpl implements QnaService {
 	@Override
 	public void qnaRegist(QnaVO vo) throws Exception {
 		dao.qnaInsert(vo);
+	}
+
+	@Override
+	public List<QnaVO> qnaMyList(int member_id) throws Exception {
+		return dao.qnaMyList(member_id);
 	}
 }

@@ -55,13 +55,13 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="page_title">
-							<h2>신고합니다 게시판</h2>
+							<h2>1:1 문의</h2>
 						</div>
 						<nav id="breadcrumbs">
 							<ul>
 								<li><a href="/">홈</a>/</li>
-								<li>커뮤니티 /</li>
-								<li>신고합니다</li>
+								<li>마이페이지 /</li>
+								<li>1:1문의</li>
 							</ul>
 						</nav>
 					</div>
@@ -86,8 +86,7 @@
 								<textarea rows="10" cols="73" class="form-control" name="qna_content" placeholder="문의 내용 작성"></textarea>
 							</div>
 							<div class="form-group">
-								<input type="submit" class="btn btn-default btn-lg button"
-									value="작성 완료">
+								<input type="submit" class="btn btn-default btn-lg button" value="작성 완료">
 							</div>
 						</form>
 					</div>
