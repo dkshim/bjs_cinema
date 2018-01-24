@@ -12,6 +12,10 @@
 		)
 	</insert>
 	
+	<select id="qnaMyList" resultType="QnaVO">
+		select * from qna where member_id = #{member_id}
+	</select>
+	
 </mapper>
 
 

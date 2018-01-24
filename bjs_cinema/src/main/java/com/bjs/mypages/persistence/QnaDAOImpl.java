@@ -1,5 +1,7 @@
 package com.bjs.mypages.persistence;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -17,6 +19,11 @@ public class QnaDAOImpl implements QnaDAO {
 	@Override
 	public void qnaInsert(QnaVO vo) throws Exception {
 		session.insert(namespace+".qnaInsert", vo);
+	}
+
+	@Override
+	public List<QnaVO> qnaMyList(int member_id) throws Exception {
+		return session.selectList(namespace+".qnaMyList", member_id);
 	}
 
 }
