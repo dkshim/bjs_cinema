@@ -6,7 +6,7 @@ public class MovieVO {
 
 	private int movie_id;
 	private String movie_name;
-	private String moive_kind;
+	private String movie_kind;
 	private String movie_director;
 	private String movie_actor;
 	private String movie_genre;
@@ -20,13 +20,13 @@ public class MovieVO {
 	
 	public MovieVO(){}
 
-	public MovieVO(int movie_id, String movie_name, String moive_kind, String movie_director, String movie_actor,
+	public MovieVO(int movie_id, String movie_name, String movie_kind, String movie_director, String movie_actor,
 			String movie_genre, String movie_grade, Timestamp movie_date, int movie_hit, String movie_content,
 			String movie_national, String movie_time, String movie_img) {
 		super();
 		this.movie_id = movie_id;
 		this.movie_name = movie_name;
-		this.moive_kind = moive_kind;
+		this.movie_kind = movie_kind;
 		this.movie_director = movie_director;
 		this.movie_actor = movie_actor;
 		this.movie_genre = movie_genre;
@@ -55,12 +55,12 @@ public class MovieVO {
 		this.movie_name = movie_name;
 	}
 
-	public String getMoive_kind() {
-		return moive_kind;
+	public String getMovie_kind() {
+		return movie_kind;
 	}
 
-	public void setMoive_kind(String moive_kind) {
-		this.moive_kind = moive_kind;
+	public void setMovie_kind(String movie_kind) {
+		this.movie_kind = movie_kind;
 	}
 
 	public String getMovie_director() {
@@ -145,7 +145,7 @@ public class MovieVO {
 
 	@Override
 	public String toString() {
-		return "MovieVO [movie_id=" + movie_id + ", movie_name=" + movie_name + ", moive_kind=" + moive_kind
+		return "MovieVO [movie_id=" + movie_id + ", movie_name=" + movie_name + ", movie_kind=" + movie_kind
 				+ ", movie_director=" + movie_director + ", movie_actor=" + movie_actor + ", movie_genre=" + movie_genre
 				+ ", movie_grade=" + movie_grade + ", movie_date=" + movie_date + ", movie_hit=" + movie_hit
 				+ ", movie_content=" + movie_content + ", movie_national=" + movie_national + ", movie_time="

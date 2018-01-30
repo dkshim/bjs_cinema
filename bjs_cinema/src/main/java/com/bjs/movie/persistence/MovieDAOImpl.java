@@ -20,8 +20,17 @@ public class MovieDAOImpl implements MovieDAO{
 	
 	
 	@Override
-	public void movieInsert(int movie_id)throws Exception {
-		session.insert(namespace+ ".movieInsert", movie_id);
+	public void movieInsert(MovieVO vo)throws Exception {
+		session.insert(namespace+ ".movieInsert", vo);
 	}
 	
+	@Override
+	public List<MovieVO> movieList()throws Exception{
+		return session.selectList(namespace+".movieList");
+	}
+	
+	@Override
+	public MovieVO movieRead(Integer movie_id)throws Exception{
+		return session.selectOne(namespace+".movieRead", movie_id);
+	}
 }

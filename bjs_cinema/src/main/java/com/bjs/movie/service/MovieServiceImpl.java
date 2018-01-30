@@ -19,8 +19,17 @@ public class MovieServiceImpl implements MovieService {
 	private MovieDAO dao;
 
 	@Override
-	public void movieInsert(int movie_id) throws Exception {
-		dao.movieInsert(movie_id);
-
+	public void movieInsert(MovieVO vo) throws Exception {
+		dao.movieInsert(vo);
+	}
+	
+	@Override
+	public List<MovieVO> movieList()throws Exception{
+		return dao.movieList();
+	}
+	
+	@Override
+	public MovieVO movieRead(Integer movie_id)throws Exception{
+		return dao.movieRead(movie_id);
 	}
 }

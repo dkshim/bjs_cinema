@@ -3,10 +3,327 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<%
+	session.setAttribute("member_id", 1);
+%>
+
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
+
+<style type="text/css">
+
+[class|="sect"][class*="chart"] > ol > li {
+    float: left;
+    width: 197px;
+    margin-left: 64px;
+    padding-bottom: 30px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+h3:first-child + ol .rank, [class|="sect"][class*="chart"] > h4:first-child + ol .rank, [class|="sect"][class*="chart"] > .spec + ol .rank {
+    background: #e71a0f;
+}
+
+.rank {
+    display: block;
+    height: 28px;
+    margin-bottom: 4px;
+    border: 6px solid #000000;
+    background: #333333;
+    color: #ffffff;
+    font-size: 19px;
+    text-align: center;
+    line-height: 28px;
+    padding-bottom: 30px;
+}
+
+strong {
+    font-weight: normal;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+div[class^="sect-"]:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+[class|="sect"][class*="chart"] > ol:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+dl:after, ul:after, ol:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.box-image a {
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+element.style {
+}
+module.css:874
+[class|="sect"][class*="chart"] .screentype {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 29px;
+    padding-top: 27px;
+    background: url(../images/common/bg/bg_poster-gradation.png) 0 0 repeat-x;
+    text-align: center;
+}
+module.css:483
+.screentype {
+    display: block;
+}
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+Inherited from div.box-image
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+Inherited from li
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+user agent stylesheet
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+Inherited from ol
+reset.css:27
+ol, ul {
+    list-style: none;
+}
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+user agent stylesheet
+ol {
+    display: block;
+    list-style-type: decimal;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+Inherited from div.sect-movie-chart
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+Inherited from div.wrap-movie-chart
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+Inherited from div#contents
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+Inherited from div#contaniner
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+Inherited from div#cgvwrap
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+Inherited from body
+reset.css:49
+body, input, textarea, button, table {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #666;
+    font-family: 'NanumBarunGothic', '맑은 고딕', '돋움', Dotum, sans-serif;
+}
+reset.css:26
+body {
+    line-height: 1;
+    color: black;
+}
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+Inherited from html
+reset.css:25
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+
+[class|="sect"][class*="chart"] .btn-like {
+    width: 23px;
+    height: 23px;
+    background-position: -60px -66px;
+}
+
+.like .btn-like {
+    display: inline-block;
+    width: 30px;
+    height: 28px;
+    background: url(../img/grayheart.PNG) 0 -60px no-repeat;
+    vertical-align: middle;
+    font: 0/0 a;
+    zoom: 1;
+}
+
+ button, input[type='submit'], input[type='button'] {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+} 
+ 
+
+button, input {
+    overflow: visible;
+}
+
+.ico-grade.grade-12 {
+    background-position: -51px 0;
+}
+
+.ico-grade {
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 21px;
+    height: 21px;
+    background: url(../images/sprite/sprite_icon.png) no-repeat;
+    font: 0/0 a;
+    zoom: 1;
+}
+
+
+div[class^="sect-"] {
+    clear: both;
+    zoom: 1;
+}
+
+.sect-sorting {
+    position: relative;
+    margin-top: 20px;
+    text-align: right;
+}
+
+label {
+    cursor: default;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+}
+
+body, input, textarea, button, table {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #666;
+    font-family: 'NanumBarunGothic', '맑은 고딕', '돋움', Dotum, sans-serif;
+}
+
+input, select, img {
+    vertical-align: middle;
+}
+
+.thumb-image {
+    border: 6px solid #000000;
+}
+
+.thumb-image {
+    display: block;
+    position: relative;
+}
+
+</style>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -195,7 +512,7 @@
                         <nav id="breadcrumbs">
                             <ul>
                                 <li><a href="index.html">영화</a>/</li>
-                                <li>무비차트</li>/<li>무비차트</li>
+                                <li>무비차트</li> / <li>무비차트</li>
                             </ul>
                         </nav>
                     </div>
@@ -221,6 +538,51 @@
             </select>
             <button type="button" class="round gray"><span>GO</span></button>
         </div>
+        
+	
+		
+		<div class="sect-movie-chart">
+			<h4 class="hidden">무비차트 - 예매율순</h4>
+			<c:forEach items="${list}" var="list">
+			<ol>
+				<li>
+					<div class="box-image">
+						<strong class="rank">No.1</strong>
+							<img src="/movie/displayFile?fileName=${list.movie_img}" alt="NO IMAGE" />
+								<span class="thumb-image">
+									<span class="ico-grade grade-12">12세 이상</span>
+								</span>
+							<span class="screentype"></span>
+					</div>
+					<div class="box-contents">
+						<a href="/movie/movieRead?movie_id=${list.movie_id}">${list.movie_name }</a>
+						<div class="score">		<!-- 예매율,  -->
+							<span class="txt-info">
+								<strong>${list.movie_date }</strong>
+							</span>   <!-- 개봉날짜  -->
+							<span class="like">
+								<button class="btn-like" value="80445">영화 찜하기</button>
+									<span class="count">
+										<strong>
+											<i>명수</i>
+										</strong>
+									</span>
+							</span>
+						</div>
+					</div>
+				</li>
+			</ol>
+			</c:forEach>
+		</div>
+
+
+        <br/>
+       	<form role="form" action="movieRegist" method="get">
+ 			  	<input type='hidden' name='member_id' value="${MemberVO.member_id }"> 
+			 	<input type="submit" value="등록" id="insertBtn">					
+		</form> 
+		
+        
         <!-- //Sorting -->
 
         </section>
@@ -339,5 +701,29 @@
     <!-- Start Style Switcher -->
     <div class="switcher"></div>
     <!-- End Style Switcher -->
+    
+    <script type="text/javascript">
+    
+	$(document).ready(function(){
+			
+		$('#insertBtn').on("click", function(){
+			e.prevenDefault();
+			fn_insertMovie();
+			});
+		});
+	
+	function fn_insertMovie(){
+		var comSubmit = new ComSubmit("frm");
+		comSubmit.setUrl("/movie/movieInsert");
+	    comSubmit.submit();
+		
+	}
+	
+
+	
+    </script>
+    
+    
+    
 </body>
 </html>

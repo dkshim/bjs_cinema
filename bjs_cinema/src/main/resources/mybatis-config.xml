@@ -10,6 +10,7 @@
 		<package name="com.bjs.cinema.domain"/>
 		<package name="com.bjs.movie.domain"/>
 		<package name="com.bjs.mypages.domain"/>
+		<package name="com.bjs.member.domain"/>
 	</typeAliases>
 
 </configuration>
