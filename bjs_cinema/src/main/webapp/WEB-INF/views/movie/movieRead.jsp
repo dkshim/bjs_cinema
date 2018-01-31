@@ -30,9 +30,9 @@
 	href="/resources/css/switcher.css" media="screen" />
 
 <style>
-[class|="sect-base"][class$="movie"] .box-contents {
+/*  [class|="sect-base"][class$="movie"] .box-contents {
     width: 765px;
-}
+} */ 
 
 [class|="sect-base"] .box-contents {
     float: left;
@@ -41,12 +41,12 @@
 
 #contents {
     clear: both;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 #cgvwrap .cgv-ad-wrap .sect-head-ad, .head, .im-wrap, #contents, .foot, .sect-smuse, .sect-cinfo {
     position: relative;
-    width: 980px;
+/*     width: 980px; */
     margin: 0 auto;
 }
 
@@ -86,7 +86,7 @@ div[class^="sect-"] {
 
 h3 {
     height: 41px;
-    margin: 30px 0 15px;
+    margin: 30px 0 15px; 
     background: url(../images/common/bg/bg_h3_line.jpg) repeat-x 0 50%;
     line-height: 41px;
     text-align: center;
@@ -101,6 +101,39 @@ h3 {
     border-bottom: 3px solid #241d1e;
 }
 
+.box-image {
+	position: absolute;
+}
+
+.box-contents {
+	margin-left: 200px;
+}
+
+
+.sect-story-movie {
+	height: 200px;
+	top: 100px;
+}
+
+.cols-content {
+	margin-top: 300px;
+}
+
+
+
+[class|="sect-base"] .title strong {
+    color: #1a1919;
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+[class|="sect-base"][class$="movie"] .spec {
+    padding-top: 18px;
+    line-height: 1.6;
+}
+
+
+
 </style>
 
 </head>
@@ -114,7 +147,12 @@ h3 {
 
 		<!-- Contents Area -->
 		<div id="contents" class="">
-            
+            <div class="tit-heading-wrap">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;<h3>영화상세</h3>
+			</div>
             <!-- Contents Start -->
 
 
@@ -122,9 +160,7 @@ h3 {
 			<div class="container">
 				<div class="row sub_content">
 					<div class="col-lg-6 col-sm-6">
-						<div class="tit-heading-wrap">
-							<h3>영화상세</h3>
-						</div>
+						
 						<div class="sect-base-movie">
 						<div class="box-image">
         					<a href="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000080/80445/80445_1000.jpg" title="포스터 크게 보기 새창" target="_blank">
@@ -137,7 +173,7 @@ h3 {
     </div>
     <div class="box-contents">
         <div class="title"> 
-            <strong>그것만이 내 세상</strong>
+            <strong>${movieVO.movie_name }</strong>
             <em class="round lightblue"><span>${movieVO.movie_kind }</span></em>
         </div>
         <div class="score"> 
@@ -150,25 +186,21 @@ h3 {
                 (<span class="view">실관람객 :&nbsp;<em>35,376명</em></span>) </strong> 
             </div>
             <!-- 떨어지는 얘 이전 요소에 class=on을 넣는다 -->
+         
         <div class="spec">
-            <dl>
-                <dt>감독 :&nbsp;</dt>
-                	<dd>${movieVO.movie_director }</dd>
-                <dt>&nbsp;/ 배우 :&nbsp;</dt>
-                <dd class="on">${movieVO.movie_actor }</dd>
-
-
-                <dt>장르 :&nbsp;${movieVO.movie_genre }</dt> 
-                <dd></dd>
-                <dt>&nbsp;/ 기본 :&nbsp;</dt>
-                <dd class="on">${movieVO.movie_grade },&nbsp;${movieVO.movie_time },&nbsp;${movieVO.movie_national }</dd>
-                <dt>개봉 :&nbsp;</dt>
-                <dd class="on">${movieVO.movie_date }</dd>
-            </dl>
+        	<ul>
+        		<li><strong>감독:&nbsp;</strong>${movieVO.movie_director }</li>
+        		<li><strong>배우:&nbsp;</strong>${movieVO.movie_actor }</li>
+        		<li><strong>장르:&nbsp;</strong>${movieVO.movie_genre }</li>
+        		<li><strong>기본:&nbsp;</strong>${movieVO.movie_grade },&nbsp; ${movieVO.movie_time }, &nbsp; ${movieVO.movie_national }</li>
+        		<li><strong>개봉:&nbsp;</strong>${movieVO.movie_date }</li>
+        	</ul>
         </div>
+       		 
         <span class="screentype">
         </span>
         
+        <br/>
         <span class="like">
             <button class="btn-like" value="80445">영화 찜하기</button>
             <span class="count">
@@ -176,29 +208,14 @@ h3 {
                 <i class="corner-RT"></i><i class="corner-LT"></i><i class="corner-LB"></i><i class="corner-RB"></i><i class="corner-arrow"></i>
             </span>
         </span>
-        </div>
     </div>
 </div><!-- .sect-base -->
 
-<script type="text/javascript">
-    _TRK_PNC = "80445";
-    _TRK_PNC_NM = "그것만이 내 세상";
-    _TRK_PNG = "영화";
-    _TRK_PI = "PDV";
-    _TRK_CP = "/영화/영화상세/{0}/그것만이 내 세상";
-</script>
-
-
     <div class="cols-content" id="menu">
         <div class="col-detail">
-            <!-- 메뉴가 선택되면 a 에 title="선택" 이라고 넣는다 -->
-            
-            <div class="sect-story-movie">${movieVO.movie_content }</div>						&nbsp;
-                
-          
-            <!-- .sect-story -->
-						
-					</div>
+            <div class="sect-story-movie">${movieVO.movie_content }</div>
+		</div>
+	</div>
 				</div>
 				</div>
 				</div>
@@ -254,7 +271,11 @@ h3 {
 </script>
 
 <script>
-
+if ( $.browser.msie ) {
+	var _thisContentWrapContent = _thisContentWrap.html().replace(/<BR>/g, '{new_line}').replace(/{new_line}/g, '\n');
+} else {
+	var _thisContentWrapContent = _thisContentWrap.text();
+}
 
 </script>
 	<!-- Start Style Switcher -->

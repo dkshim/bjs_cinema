@@ -11,7 +11,7 @@ public class MovieVO {
 	private String movie_actor;
 	private String movie_genre;
 	private String movie_grade;
-	private Timestamp movie_date;
+	private String movie_date;
 	private int movie_hit;
 	private String movie_content;
 	private String movie_national;
@@ -21,7 +21,7 @@ public class MovieVO {
 	public MovieVO(){}
 
 	public MovieVO(int movie_id, String movie_name, String movie_kind, String movie_director, String movie_actor,
-			String movie_genre, String movie_grade, Timestamp movie_date, int movie_hit, String movie_content,
+			String movie_genre, String movie_grade, String movie_date, int movie_hit, String movie_content,
 			String movie_national, String movie_time, String movie_img) {
 		super();
 		this.movie_id = movie_id;
@@ -95,11 +95,11 @@ public class MovieVO {
 		this.movie_grade = movie_grade;
 	}
 
-	public Timestamp getMovie_date() {
+	public String getMovie_date() {
 		return movie_date;
 	}
 
-	public void setMovie_date(Timestamp movie_date) {
+	public void setMovie_date(String movie_date) {
 		this.movie_date = movie_date;
 	}
 

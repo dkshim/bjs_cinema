@@ -11,7 +11,7 @@
 		movie_id, movie_name, movie_kind, movie_director, movie_actor, movie_genre, movie_grade, movie_date, movie_hit,
 		movie_content, movie_national, movie_time <if test="movie_img != null">, movie_img</if>
 		)values(
-		movie_id_seq.nextval, #{movie_name}, #{movie_kind}, #{movie_director}, #{movie_actor}, #{movie_genre}, #{movie_grade}, ${movie_date}, #{movie_hit},
+		movie_id_seq.nextval, #{movie_name}, #{movie_kind}, #{movie_director}, #{movie_actor}, #{movie_genre}, #{movie_grade}, #{movie_date}, #{movie_hit},
 		#{movie_content}, #{movie_national}, #{movie_time} <if test="movie_img != null">, #{movie_img}</if>
 		)
 	</insert>

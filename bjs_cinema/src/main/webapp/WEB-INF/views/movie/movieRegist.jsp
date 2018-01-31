@@ -78,67 +78,13 @@
 								<span>영화 등록 작성</span>
 							</h4>
 						</div>
-						<%--  <form:form action="/movie/movieInsert" id="registerform"
-							 method="post"
-							enctype="multipart/form-data">
-							<div class="form-group">
-								<input type="hidden" class="form-control" name="member_id"
-									value="${member_id}">
-							</div>
-							<div class="form-group">
-								<form:input type="text" class="form-control" path="movie_name"
-									placeholder="영화 이름" />
-							</div>
-							<div class="form-group">
-								<form:input type="text" class="form-control" path="movie_title"
-									placeholder="글 제목" />
-							</div>
-							<div class="form-group">
-								<form:select class="form-control" path="movie_kind">
-									<option value="A">개봉예정</option>
-									<option value="B">상영중</option>
-									<option value="C">상영종료</option>
-								</form:select>
-							</div>
-							
-							<div class="form-group">
-								<form:textarea rows="10" cols="73" class="form-control"
-									path="movie_content" placeholder="글 내용" />
-							</div>
-							
-							<div class="form-group">
-								<form:input type="text" class="form-control" path="movie_director"
-									placeholder="감독" />
-							</div>
-							
-							<div class="form-group">
-								<form:input type="text" class="form-control" path="movie_actor"
-									placeholder="배우" />
-								<form:errors path="movie_actor" cssClass="error" />
-							</div>
-
-							<div class="form-group">
-								<form:input type="text" class="form-control" path="movie_genre"
-									placeholder="장르" />
-								<form:errors path="movie_actor" cssClass="error" />
-							</div>	
-							
-							<div class="form-group">
-								<form:select class="form-control" path="movie_grade">
-									<option value="A">전체 관람가</option>
-									<option value="K">12세 관람가</option>
-									<option value="T">15세 관람가</option>
-									<option value="Z">청소년 관람불가</option>
-								</form:select>
-							</div> --%>							
-							
 					 
 						 <form action="/movie/movieRegist" method="post" id="registerform" enctype="multipart/form-data"> 
 						제목 : <input type="text" name="movie_name"/> 
 						<br/> 
 						종류 : <select name="movie_kind">
 							<option value="A">개봉예정</option>
-							<option value="B">상영중</option>
+							<option value="B">현재상영중</option>
 							<option value="C">상영종료</option>
 						</select> 
 						<br/>
@@ -155,10 +101,8 @@
 							<option value="Z">청소년 관람불가</option>
 						</select> 
 						<br/>
-						<%-- 상영날짜 : ${MovieVo.movie_date}
+						상영날짜 : <input type="text" name="movie_date"/>
 						<br/>
-						조회수 : ${MovieVo.movie_hit}
-						<br/> --%>
 						내용 : <textarea rows="10" cols="50" name="movie_content"></textarea>
 						<br/>
 						나라 : <input type="text" name="movie_national">

@@ -319,15 +319,10 @@ input, select, img {
     vertical-align: middle;
 }
 
-.thumb-image {
-    border: 6px solid #000000;
-}
 
-.thumb-image {
-    display: block;
-    position: relative;
+.fa-hear-o {
+	color: red;
 }
-
 
 
 </style>
@@ -569,7 +564,19 @@ input, select, img {
 							</span>   <!-- 개봉날짜  -->
 							<br/>
 							<span class="like">
-								<i class="fa fa-heart" onclick="hearton()"></i>영화 찜하기
+								<i class="fa fa-heart" onclick="heartOn()">영화찜하기</i>
+								<c:if test="${member_id != -1 }">
+									<c:if test="${movieVO.movie_heart == 0 }">
+										<button type="submit" id="heartUp">
+											<i class="fa fa-heart"></i><b> 찜하기 </b>
+										</button>
+									</c:if>
+								<c:if test="${movieVO.movie_heart > 0 }">
+									<button type="submit" id="heartDown">
+										<i class="fa fa-heart-o"> </i><b> 찜하기 </b>
+									</button>
+								</c:if>
+							</c:if>
 									<span class="count">
 										<strong>
 											<i>명수</i>
@@ -582,6 +589,7 @@ input, select, img {
 			</ol>
 			</c:forEach>
 		</div>
+
 
 
         <br/>
@@ -727,6 +735,50 @@ input, select, img {
 		
 	}
 	
+
+	$("#heartOn").on("click", function() {
+			event.preventDefault();
+			if (confirm("추천하시겠습니까?")) {
+				$.ajax({
+					url : '/movie/movieHeartOn/' + movie_id,
+					type : 'POST',
+					dataType : 'text',
+					success : function(result) {
+						if (result == 'success') {
+							formObj.attr("action", "/movie/movieRead?movie_id=" + movie_id);
+							formObj.attr("method", "get");
+							formObj.submit();
+						}
+					}
+				});
+			} else {
+				alert('추천하기 취소하셨습니다');
+			}
+			
+		});
+
+	
+
+	/* $("#heartDown").on("click", function() {
+		event.preventDefault();
+		if (confirm("추천 해제하시겠습니까?")) {
+			$.ajax({
+				url : '/community/photoHeartDown/' + photo_id,
+				type : 'POST',
+				dataType : 'text',
+				success : function(result) {
+					if (result == 'success') {
+						alert("추천 해제 성공");
+						formObj.attr("action", "/community/photoReviewRead?photo_id=" + photo_id);
+						formObj.attr("method", "get");
+						formObj.submit();
+					}
+				}
+			});
+		} else {
+			alert('추천상태가 유지됩니다');
+		}
+	}); */
 
 	
     </script>
