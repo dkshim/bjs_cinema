@@ -6,9 +6,9 @@
 
 	<insert id="qnaInsert" parameterType="QnaVO">
 		insert into qna(
-		qna_id, qna_date, qna_content, member_id
+		qna_id, qna_date, qna_title, qna_content, member_id
 		)values(
-		qna_id_seq.nextval, sysdate, #{qna_content}, 4
+		qna_id_seq.nextval, sysdate,#{qna_title}, #{qna_content}, #{member_id}
 		)
 	</insert>
 	

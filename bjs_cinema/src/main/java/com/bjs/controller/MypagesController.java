@@ -25,9 +25,7 @@ public class MypagesController {
 	//qna문의 글 db저장
 	@RequestMapping(value="qnaRegist", method=RequestMethod.POST)
 	public void qnaRegistPost(QnaVO vo, Model model) throws Exception {
-		System.out.println(vo.toString());
 		qService.qnaRegist(vo);
-		System.out.println("Db저장완료");
 	}
 	
 	//qna MyList
@@ -35,9 +33,9 @@ public class MypagesController {
 	public String qnaMyList(Model model) throws Exception {
 		QnaVO vo = new QnaVO();
 		int member_id=4;
-		//member_id = vo.getMember_id(); 
+		//member_id = vo.getMember_id();
 		model.addAttribute("qnaMyList", qService.qnaMyList(member_id));
-		return "mypages/qnaList";
+		return "/mypages/qnaList";
 	}
 	
 }

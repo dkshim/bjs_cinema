@@ -72,17 +72,19 @@
 			<div class="container">
 				<div class="row sub_content">
 					<div class="col-lg-6 col-sm-6">
-						<div class="dividerHeading">
-							<h4>
-								<span>문의 글 작성</span>
-							</h4>
-						</div>
 						<form id='registerForm' role="form" method="post" name="registerform">
+							<!-- 추후 로그인 추가되면 member_id는 세션값으로 -->
 							<div class="form-group">
-								<!-- <input type="hidden" class="form-control" name="member_id" value="4"> -->
+								<label>member_id :</label><br>
+								<input type="text" class="form-control" name="member_id">
+							</div>
+							
+							<div class="form-group">
+								<label>제목 :</label><br>
+								<input type="text" class="form-control" name="qna_title">
 							</div>
 							<div class="form-group">
-								<label>문의 내용 작성</label><br>
+								<label>문의 내용 :</label><br>
 								<textarea rows="10" cols="73" class="form-control" name="qna_content" placeholder="문의 내용 작성"></textarea>
 							</div>
 							<div class="form-group">

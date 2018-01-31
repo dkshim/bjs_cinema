@@ -38,6 +38,19 @@
 	width: auto;
 	height: auto;
 }
+/* #qnaCol li{
+	display:inline;
+	border-left:1px solid #999; 
+	font:bold 12px Dotum; 
+	padding:0 150px;
+
+}
+#qnaCol1 li{
+	display:inline;
+	border-left:1px solid #999; 
+	padding:0 150px;
+
+} */
 </style>
 </head>
 <body class="home">
@@ -47,7 +60,7 @@
 
 	<!--start wrapper-->
 	<section class="wrapper">
-		<section class="page_head">
+ 		<section class="page_head">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
@@ -65,7 +78,7 @@
 				</div>
 			</div>
 		</section>
-
+<%--
 		<section class="content typography">
 			<div class="container">
 				<div class="row sub_content">
@@ -157,6 +170,61 @@
 							</div>
 
 						</div>
+					</div>
+				</div>
+			</div>
+		</section> --%>
+		<section class="content typography">
+			<div class="container">
+				<div class="row sub_content">
+					<div class="pricingBlock theme-color-pt">
+						<!--  DARK-BLUE PRICE ITEM  -->
+							<div class="pricingTable"><!-- BODY BOX-->
+								<div class="pricingTable-header"><!-- HEADER BOX-->
+									<span class="heading">내 문의 내역</span>
+								</div><!--/ BODY BOX-->
+								
+								<div class="pricingContent">
+									<!-- 추후 로그인 됐을때 나누기 -->
+									<h2 align="center">문의 내역이 존재하지 않습니다.</h2>
+									<div>
+										<ul id="qnaCol">
+											<li>제목</li>
+											<li>문의날짜</li>
+											<li>답변상태</li>
+										</ul>
+									</div>
+									<div>
+										<c:forEach var="qnaList" items="${qnaMyList}">
+											<ul id="qnaCol1">
+												<li>${qnaList.qna_title}</li>
+													<li>
+														<fmt:formatDate value="${qnaList.qna_date}" pattern="yyyy-MM-dd" />
+													</li>
+													<li>
+														<c:choose>
+															<c:when test="${qnaList.qna_state=='I'}">
+																<span>처리중</span>
+															</c:when>
+															<c:when test="${qnaList.qna_state=='C'}">
+																<span>답변완료</span>
+															</c:when>
+														</c:choose>
+													</li>
+											</ul>
+										</c:forEach>
+									</div>
+								</div><!-- /  CONTENT BOX-->
+							</div><!--/ BODY BOX-->
+							<!-- BUTTON BOX -->
+							<!-- 추후 관리자로그인일때 답변달기 버튼활성화로 수정 -->
+							<!-- 
+							<div class="pricingTable-sign-up">
+								<a href="#" class="btn btn-block btn-default">BUY NOW!</a>
+							</div>
+							 -->
+							<!-- BUTTON BOX END-->
+						<!--  DARK-BLUE PRICE ITEM  -->
 					</div>
 				</div>
 			</div>
