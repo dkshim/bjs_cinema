@@ -1,4 +1,4 @@
-package com.kobook.login.DTO;
+package com.bjs.login.DTO;
 
 public class LoginDTO {
 

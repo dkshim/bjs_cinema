@@ -5,8 +5,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.bjs.login.DTO.LoginDTO;
 import com.bjs.member.domain.MemberVO;
-import com.kobook.login.DTO.LoginDTO;
 
 
 @Repository

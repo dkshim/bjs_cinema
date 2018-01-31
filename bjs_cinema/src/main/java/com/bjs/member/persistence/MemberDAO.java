@@ -1,7 +1,7 @@
 package com.bjs.member.persistence;
 
+import com.bjs.login.DTO.LoginDTO;
 import com.bjs.member.domain.MemberVO;
-import com.kobook.login.DTO.LoginDTO;
 
 
 public interface MemberDAO {

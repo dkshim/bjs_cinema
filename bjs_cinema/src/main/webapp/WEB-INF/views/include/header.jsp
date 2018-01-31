@@ -201,6 +201,9 @@
 		background-color:white;
 	}
 	
+	.memberAdmin>li{
+	display: inline;
+	}
 </style>
 
 
@@ -261,10 +264,10 @@
                         <div id="logo">
 	                        <c:choose>
 	                        	<c:when test="${(person_id == 1) || (person_id == -1)}">
-                        			<h1><a href="/main">KOBOOK</a></h1>
+                        			<h1><a href="/main"><img src="/resources/img/BJSlogo.PNG"></a></h1>
                         		</c:when>
                         		<c:otherwise>
-                        		 <h1><a href="/recom">KOBOOK</a></h1>
+                        		 <h1><a href="/recom"><img src="/resources/img/BJSlogo.PNG"></a></h1>
                         		</c:otherwise>
 	                        </c:choose>
                         </div>
@@ -277,11 +280,29 @@
                     	<div class="navbar navbar-default navbar-static-top" role="navigation">
                             <!--  <div class="container">-->
                             
-                            <div style="margin-left: 400px; font-size: small;">
-        						
-        						<c:if test="${person_email == null }">
-									<a href="#" onclick="fn_login()">로그인</a>
+                            <div style="margin-left: 100px; font-size: small;">
+        						<ul class="memberAdmin">
+        						<c:if test="${member_identify == null }">
+        							<li>
+										<a href="#" onclick="fn_login()">로그인 | </a>
+									</li>
 								</c:if>	
+								<c:if test="${person_email == null }">
+									<li>
+										<a href="#" onclick="fn_login()">회원가입 | </a>
+									</li>
+								</c:if>	
+								<c:if test="${person_email == null }">
+									<li>
+										<a href="#" onclick="fn_login()">My BJS | </a>
+									</li>
+								</c:if>	
+								<c:if test="${person_email == null }">
+									<li>
+										<a href="#" onclick="fn_login()">고객센터</a>
+									</li>
+								</c:if>	
+								</ul>
 							</div>
 							
 							<div style="margin-left: 80px;">
@@ -315,10 +336,31 @@
 			                        	</c:otherwise>
                                 	</c:choose>
 	                                	
-                                    <li><a href="/book/bookList">전체검색</a></li>
-                                    <li><a href="/book/booklocationList">지역검색</a></li>
+                                    <li><a href="/book/bookList">영화</a>
+                                   		<ul class="dropdown-menu">
+                                    		<li><a href="">무비 차트</a></li>
+                                    		<li><a href="">평점</a></li>
+                                    	</ul>
+                                    </li>
+                                    
+                                    <li><a href="/book/booklocationList">예매</a>
+                                    	<ul class="dropdown-menu">
+                                    		<li><a href="">빠른 예매</a></li>
+                                    		<li><a href="">상영시간표</a></li>
+                                    	</ul>
+                                    </li>
 
-                                    <li><a href="/community/blackList" >커뮤니티</a>
+                                    <li><a href="/community/blackList" >극장</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/community/blackList">신고합니다</a></li>
+                                            <li><a href="/community/donateList">무료나눔</a></li>
+                                            <li><a href="/community/photoReviewList">포토리뷰</a></li>
+                                            <li><a href="/board/boardList">공지사항</a></li>
+                                            <li><a href="/community/qna">자주묻는질문</a></li>
+                                        </ul>
+                                    </li> 
+                                    
+                                    <li><a href="/community/blackList" >Store</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="/community/blackList">신고합니다</a></li>
                                             <li><a href="/community/donateList">무료나눔</a></li>
