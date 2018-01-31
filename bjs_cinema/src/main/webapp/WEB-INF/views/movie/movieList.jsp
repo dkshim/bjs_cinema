@@ -17,12 +17,17 @@
 [class|="sect"][class*="chart"] > ol > li {
     float: left;
     width: 197px;
-    margin-left: 64px;
+    margin-left: 200px;
     padding-bottom: 30px;
 }
 
 ol, ul {
     list-style: none;
+    display: inline-block;
+}
+
+h4 {
+    margin-left: 200px;	
 }
 
 h3:first-child + ol .rank, [class|="sect"][class*="chart"] > h4:first-child + ol .rank, [class|="sect"][class*="chart"] > .spec + ol .rank {
@@ -241,26 +246,26 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background-position: -60px -66px;
 }
 
-.like .btn-like {
+/* .like .btn-like {
     display: inline-block;
     width: 30px;
     height: 28px;
-    background: url(../img/grayheart.PNG) 0 -60px no-repeat;
+/*     background: url(../img/grayheart.PNG) 0 -60px no-repeat; */
     vertical-align: middle;
     font: 0/0 a;
     zoom: 1;
 }
-
- button, input[type='submit'], input[type='button'] {
+ */
+  button, input[type='submit'], input[type='button'] {
     cursor: pointer;
     margin: 0;
     padding: 0;
 } 
  
 
-button, input {
+/* button, input {
     overflow: visible;
-}
+} */
 
 .ico-grade.grade-12 {
     background-position: -51px 0;
@@ -322,6 +327,8 @@ input, select, img {
     display: block;
     position: relative;
 }
+
+
 
 </style>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -548,20 +555,21 @@ input, select, img {
 				<li>
 					<div class="box-image">
 						<strong class="rank">No.1</strong>
-							<img src="/movie/displayFile?fileName=${list.movie_img}" alt="NO IMAGE" />
+							<a href="/movie/movieRead?movie_id=${list.movie_id}"><img src="/movie/displayFile?fileName=${list.movie_img}" alt="NO IMAGE" /></a>
 								<span class="thumb-image">
 									<span class="ico-grade grade-12">12세 이상</span>
 								</span>
 							<span class="screentype"></span>
 					</div>
 					<div class="box-contents">
-						<a href="/movie/movieRead?movie_id=${list.movie_id}">${list.movie_name }</a>
+						<a href="/movie/movieRead?movie_id=${list.movie_id}">${list.movie_name}</a>
 						<div class="score">		<!-- 예매율,  -->
 							<span class="txt-info">
 								<strong>${list.movie_date }</strong>
 							</span>   <!-- 개봉날짜  -->
+							<br/>
 							<span class="like">
-								<button class="btn-like" value="80445">영화 찜하기</button>
+								<i class="fa fa-heart" onclick="hearton()"></i>영화 찜하기
 									<span class="count">
 										<strong>
 											<i>명수</i>
