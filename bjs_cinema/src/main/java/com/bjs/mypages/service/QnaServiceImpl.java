@@ -23,4 +23,14 @@ public class QnaServiceImpl implements QnaService {
 	public List<QnaVO> qnaMyList(int member_id) throws Exception {
 		return dao.qnaMyList(member_id);
 	}
+
+	@Override
+	public QnaVO qnaRead(int qna_id) throws Exception {
+		return dao.qnaSelect(qna_id);
+	}
+
+	@Override
+	public String qnaWriter(int qna_id) throws Exception {
+		return dao.qnaWriter(qna_id);
+	}
 }

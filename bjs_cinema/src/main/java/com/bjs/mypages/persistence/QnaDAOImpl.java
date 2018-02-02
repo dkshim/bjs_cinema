@@ -26,4 +26,14 @@ public class QnaDAOImpl implements QnaDAO {
 		return session.selectList(namespace+".qnaMyList", member_id);
 	}
 
+	@Override
+	public QnaVO qnaSelect(int qna_id) throws Exception {
+		return session.selectOne(namespace+".qnaSelect", qna_id);
+	}
+
+	@Override
+	public String qnaWriter(int qna_id) throws Exception {
+		return session.selectOne(namespace+".qnaWriter", qna_id);
+	}
+
 }

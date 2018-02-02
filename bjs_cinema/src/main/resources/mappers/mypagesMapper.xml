@@ -8,12 +8,28 @@
 		insert into qna(
 		qna_id, qna_date, qna_title, qna_content, member_id
 		)values(
-		qna_id_seq.nextval, sysdate,#{qna_title}, #{qna_content}, #{member_id}
+		qna_id_seq.nextval, sysdate
+		<if test="qna_title != null">
+		,#{qna_title}
+		</if>
+		<if test="qna_title == null">
+		,'제목 없음'
+		</if>
+		, #{qna_content}, #{member_id}
 		)
 	</insert>
 	
 	<select id="qnaMyList" resultType="QnaVO">
 		select * from qna where member_id = #{member_id}
+	</select>
+	
+	<select id="qnaSelect" resultType="QnaVO" parameterType="int">
+		select * from qna where qna_id = #{qna_id}
+	</select>
+	
+	<select id="qnaWriter" resultType="string" parameterType="int">
+		select M.MEMBER_NAME from qna Q join member M on Q.member_id = M.member_id
+		where Q.qna_id =#{qna_id}
 	</select>
 	
 </mapper>

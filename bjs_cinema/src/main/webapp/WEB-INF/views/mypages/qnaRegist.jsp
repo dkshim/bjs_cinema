@@ -81,7 +81,7 @@
 							
 							<div class="form-group">
 								<label>제목 :</label><br>
-								<input type="text" class="form-control" name="qna_title">
+								<input type="text" class="form-control" name="qna_title" placeholder="제목">
 							</div>
 							<div class="form-group">
 								<label>문의 내용 :</label><br>
@@ -131,94 +131,6 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
-	<script id="template" type="text/x-handlebars-template">
-<li>
-  <div class="mailbox-attachment-info">
-	<a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}
-  <span class="mailbox-attachment-icon has-img"><br><img src="{{imgsrc}}" alt="Attachment">
-</a>
-	<a href="{{fullName}}" 
-     class="btn btn-default btn-xs pull-right delbtn"><i class="fa fa-fw fa-remove"></i></a>
-	</span>
-  </div>
-</li>                
-</script>
-
-	<script>
-var template = Handlebars.compile($("#template").html());
-
-$(".fileDrop").on("dragenter dragover", function(event){
-	event.preventDefault();
-});
-
-
-$(".fileDrop").on("drop", function(event){
-	event.preventDefault();
-	
-	var files = event.originalEvent.dataTransfer.files;
-	
-	var file = files[0];
-
-	var formData = new FormData();
-	
-	formData.append("file", file);	
-	
-	
-	$.ajax({
-		  url: '/community/uploadAjax',
-		  data: formData,
-		  dataType:'text',
-		  processData: false,
-		  contentType: false,
-		  type: 'POST',
-		  success: function(data){
-			  
-			  var fileInfo = getFileInfo(data);
-			  
-			  var html = template(fileInfo);
-			  
-			  $(".uploadedList").append(html);
-		  }
-		});	
-});
-
-$(".uploadedList").on("click", ".delbtn", function(event){
-	
-	event.preventDefault();
-	
-	var that = $(this);
-	 
-	$.ajax({
-	   url:"/community/deleteFile",
-	   type:"post",
-	   data: {fileName:$(this).attr("href")},
-	   dataType:"text",
-	   success:function(result){
-		   if(result == 'deleted'){
-			   that.closest("li").remove();
-		   }
-	   }
-   });
-});
-
-$("#registerForm").submit(function(event){
-	event.preventDefault();
-	
-	var that = $(this);
-	
-	var str ="";
-	$(".uploadedList .delbtn").each(function(index){
-		 str += "<input type='hidden' name='files["+index+"]' value='"+$(this).attr("href") +"'> ";
-	});
-	
-	that.append(str);
-
-	that.get(0).submit();
-});
-
-
-
-</script>
 
 	<!-- Start Style Switcher -->
 	<div class="switcher"></div>

@@ -27,13 +27,22 @@
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/switcher.css" media="screen" />
 <style type="text/css">
-	.li_table ul {margin: 0;padding: 0;list-style-type: none;} 
-	.li_table .qnaCol {font-weight: bold;text-align: center;}
-	.li_table ul li {text-align: center;display:inline-block;margin: 0;width: 280px;}
-	.li_table ul .col {width: 600px;} 
-	.btn-default {
-		float: right;
-	}
+.layer1 {
+	position: absolute;
+	padding: 5px;
+	filter: alpha(opacity = 50);
+	background-color: white;
+	border: 2px #000000 solid;
+	border-radius: 10px;
+	text-align: center;
+	width: auto;
+	height: auto;
+}
+			.li_table ul {margin: 0;padding: 0;list-style-type: none;} 
+			/* list-style-type 블릿표시 padding: 0; 들여쓰기*/
+			.li_table .qnaCol {font-weight: bold;text-align: center;}
+			.li_table ul li {text-align: center;display:inline-block;margin: 0;width: 280px;}
+			.li_table ul .col {width: 600px;} /* 표 라인 맞추기기 위해*/
 </style>
 </head>
 <body class="home">
@@ -68,10 +77,6 @@
 					<div class="pricingBlock theme-color-pt">
 						<!--  DARK-BLUE PRICE ITEM  -->
 							<div class="pricingTable"><!-- BODY BOX-->
-								<div class="pricingTable-header"><!-- HEADER BOX-->
-									<span class="heading">내 문의 내역</span>
-								</div><!--/ BODY BOX-->
-								
 								<div class="pricingContent">
 									<!-- 추후 로그인 됐을때 나누기 -->
 									<!-- <h2 align="center">문의 내역이 존재하지 않습니다.</h2> -->
@@ -81,30 +86,34 @@
 											<li>문의날짜</li>
 											<li>답변상태</li>
 										</ul>
-										<c:forEach var="qna" items="${qnaMyList}">
-											<ul>
-												<li class="col"><a href="/mypages/qnaRead?qna_id=${qna.qna_id }" >${qna.qna_title}</a></li>
-													<li>
-														<fmt:formatDate value="${qna.qna_date}" pattern="yyyy-MM-dd" />
-													</li>
-													<li>
-														<c:choose>
-															<c:when test="${qna.qna_state=='I'}">
-																<span>처리중</span>
-															</c:when>
-															<c:when test="${qna.qna_state=='C'}">
-																<span>답변완료</span>
-															</c:when>
-														</c:choose>
-													</li>
-											</ul>
-										</c:forEach>
+										<ul>
+											<li class="col">${qnaVO.qna_title}</li>
+											<li>
+												<fmt:formatDate value="${qnaVO.qna_date}" pattern="yyyy-MM-dd" />
+											</li>
+											<li>
+												<c:choose>
+													<c:when test="${qnaVO.qna_state=='I'}">
+														<span>처리중</span>
+													</c:when>
+													<c:when test="${qnaVO.qna_state=='C'}">
+														<span>답변완료</span>
+													</c:when>
+												</c:choose>
+											</li>
+										</ul>
+										<ul>
+											<li class="qnaCol">문의내용 :</li>
+											<li class="col">${qnaVO.qna_content }</li>
+										</ul>
 									</div>
+								<!-- BUTTON BOX -->
+								<!-- 추후 관리자로그인일때 답변달기 버튼활성화로 수정 -->
+									<!-- <a href="#" class="btn btn-default">답변달기</a> -->
+								<!-- BUTTON BOX END-->
 								</div><!-- /  CONTENT BOX-->
 							</div><!--/ BODY BOX-->
-							<!-- BUTTON BOX -->
-								<a href="/mypages/qnaRegist" class="btn btn-default">1:1 문의</a>
-							<!-- BUTTON BOX END-->
+
 						<!--  DARK-BLUE PRICE ITEM  -->
 					</div>
 				</div>

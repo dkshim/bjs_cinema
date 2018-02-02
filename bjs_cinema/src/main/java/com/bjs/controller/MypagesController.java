@@ -24,18 +24,28 @@ public class MypagesController {
 	
 	//qna문의 글 db저장
 	@RequestMapping(value="qnaRegist", method=RequestMethod.POST)
-	public void qnaRegistPost(QnaVO vo, Model model) throws Exception {
+	public String qnaRegistPost(QnaVO vo, Model model) throws Exception {
+		if (vo.getQna_title() == "") {
+			vo.setQna_title("제목 없음");
+		}
 		qService.qnaRegist(vo);
+		return "redirect:/mypages/qnaMyList";
 	}
 	
 	//qna MyList
 	@RequestMapping(value="qnaMyList", method=RequestMethod.GET)
 	public String qnaMyList(Model model) throws Exception {
 		QnaVO vo = new QnaVO();
-		int member_id=4;
-		//member_id = vo.getMember_id();
+		int member_id=2;
 		model.addAttribute("qnaMyList", qService.qnaMyList(member_id));
 		return "/mypages/qnaList";
+	}
+	
+	//qnaRead
+	@RequestMapping(value="qnaRead", method=RequestMethod.GET)
+	public void qnaRead(@RequestParam("qna_id") int qna_id, Model model) throws Exception {
+		model.addAttribute(qService.qnaRead(qna_id));
+		model.addAttribute("writer", qService.qnaWriter(qna_id));
 	}
 	
 }
