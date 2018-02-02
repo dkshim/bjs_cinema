@@ -174,13 +174,6 @@ public class MovieController {
 			List<MovieVO> list = movieservice.movieList();
 			HashMap<Integer, String> userMap = new HashMap<Integer, String>();
 
-/*			int movie_id;
-
-			for (int index = 0; index < list.size(); index++) {
-				movie_id = list.get(index).getMovie_id();
-				userMap.put(movie_id, movieservice.donateWriter(movie_id));
-			}*/
-
 			model.addAttribute("list", list);
 			model.addAttribute("userMap", userMap);
 		}
@@ -190,5 +183,12 @@ public class MovieController {
 		public void movieRead(@RequestParam("movie_id") int movie_id, Model model) throws Exception {
 			model.addAttribute(movieservice.movieRead(movie_id));
 		}		
+		
+		
+		//예매 LIST 출력
+		@RequestMapping("/rsvList")
+		public void rsvList(Model model) throws Exception {
+			
+		}
 }
 

@@ -163,18 +163,26 @@ h3 {
 						
 						<div class="sect-base-movie">
 						<div class="box-image">
-        					<a href="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000080/80445/80445_1000.jpg" title="포스터 크게 보기 새창" target="_blank">
             				<span class="thumb-image"> 
                				<img src="/movie/displayFile?fileName=${movieVO.movie_img}" alt="NO IMAGE" />
 <!--                 <span class="ico-posterdetail">포스터 크게 보기</span>
                 <span class="ico-grade grade-12"> 12세 이상</span> -->
             </span> 
-        </a> 
     </div>
     <div class="box-contents">
         <div class="title"> 
             <strong>${movieVO.movie_name }</strong>
-            <em class="round lightblue"><span>${movieVO.movie_kind }</span></em>
+            <em class="round lightblue">
+            <c:if test="${movieVO.movie_kind=='A'}">
+            	<span>개봉예정</span>
+            </c:if>
+            <c:if test="${movieVO.movie_kind=='B'}">
+            	<span>현재상영중</span>
+            </c:if>
+            <c:if test="${movieVO.movie_kind=='C'}">
+            	<span>개봉종료</span>
+            </c:if>
+            </em>
         </div>
         <div class="score"> 
             <div class="egg-gage small">
@@ -192,7 +200,20 @@ h3 {
         		<li><strong>감독:&nbsp;</strong>${movieVO.movie_director }</li>
         		<li><strong>배우:&nbsp;</strong>${movieVO.movie_actor }</li>
         		<li><strong>장르:&nbsp;</strong>${movieVO.movie_genre }</li>
-        		<li><strong>기본:&nbsp;</strong>${movieVO.movie_grade },&nbsp; ${movieVO.movie_time }, &nbsp; ${movieVO.movie_national }</li>
+        		<li><strong>기본:&nbsp;</strong>
+        			<c:if test="${movieVO.movie_grade=='A'}">
+        				전체 관람가,
+        			</c:if>
+        			<c:if test="${movieVO.movie_grade=='K'}">
+        				12세 관람가,
+        			</c:if>
+        			<c:if test="${movieVO.movie_grade=='T'}">
+        				15세 관람가,
+        			</c:if>
+        			<c:if test="${movieVO.movie_grade=='Z'}">
+        				청소년 관람불가,
+        			</c:if>
+        		&nbsp; ${movieVO.movie_time }, &nbsp; ${movieVO.movie_national }</li>
         		<li><strong>개봉:&nbsp;</strong>${movieVO.movie_date }</li>
         	</ul>
         </div>
@@ -276,6 +297,11 @@ if ( $.browser.msie ) {
 } else {
 	var _thisContentWrapContent = _thisContentWrap.text();
 }
+
+/* $('#btn-like').function(){
+Btn-like btn-like = new Btn-like(getClass().getResource("resource//")) 
+} */
+
 
 </script>
 	<!-- Start Style Switcher -->
