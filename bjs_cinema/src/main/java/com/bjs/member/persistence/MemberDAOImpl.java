@@ -1,56 +1,37 @@
 package com.bjs.member.persistence;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.bjs.login.DTO.LoginDTO;
 import com.bjs.member.domain.MemberVO;
 
-
+//현재 클래스를 스프링에서 관라하는 dao bean으로 등록한다.
 @Repository
 public class MemberDAOImpl implements MemberDAO {
 
 	@Inject
-	private SqlSession session;
+	SqlSession session;
 	
-	private static String namespace = "com.bjs.mappers.MemberMapper";
-	
+	//1-1 회원 로그인 체크
 	@Override
-	public int findMemberId(String Member_email) throws Exception {
-		if(session.selectOne(namespace+".findId", Member_email) == null){
-			return -1;
-		} else {
-			return session.selectOne(namespace+".findId", Member_email);
-		}
-	}
-	
-	@Override
-	public String findMemberEmail(int Member_id) throws Exception {
-		return session.selectOne(namespace + ".findEmail", Member_id);
-	}
-	
-	@Override
-	public String findMemberName(int Member_id) throws Exception {
-		return session.selectOne(namespace + ".findName", Member_id);
+	public Boolean loginCheck(MemberVO vo) {
+		String name = session.selectOne("member.loginCheck", vo);
+		return (name == null) ? false : true;
 	}
 
-/*	@Override
-	public MemberVO loginCheck(String Member_email) {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-	
+	//1-2 회원 로그인 정보
 	@Override
-	public MemberVO login(LoginDTO dto) throws Exception {
+	public MemberVO viewMember(MemberVO vo) {
 		
-		return session.selectOne(namespace + ".login", dto);
+		return session.selectOne("member.viewMember",vo);
 	}
 
+	//2-1 회원 로그아웃
 	@Override
-	public MemberVO loginCheck(String Member_email) {
-		return session.selectOne(namespace + ".loginCheck", Member_email);
+	public void logout(HttpSession session) {
 	}
 
 }

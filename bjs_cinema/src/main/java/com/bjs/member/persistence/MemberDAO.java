@@ -1,16 +1,15 @@
 package com.bjs.member.persistence;
 
-import com.bjs.login.DTO.LoginDTO;
+import javax.servlet.http.HttpSession;
+
 import com.bjs.member.domain.MemberVO;
 
-
 public interface MemberDAO {
-	
-	public int findMemberId(String member_email) throws Exception;
-	public String findMemberEmail(int member_id) throws Exception;
-	public String findMemberName(int member_id) throws Exception;
-	
-	public MemberVO login(LoginDTO dto) throws Exception;	
-	public MemberVO loginCheck(String person_email);
 
+	//1-1 회원 로그인 체크
+	public Boolean loginCheck(MemberVO vo);
+	//1-2 회원 로그인 정보
+	public MemberVO viewMember(MemberVO vo);
+	//2-1 회원 로그아웃
+	public void logout(HttpSession session);
 }
