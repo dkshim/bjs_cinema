@@ -7,15 +7,21 @@ public class CinemaVO {
 	private String cinema_kind;
 	private String cinema_outlook;
 	private String cinema_seat;
+	private String cinema_name;
+	private String cinema_address;
 	
-	public CinemaVO(int cinema_id, String cinema_region, String cinema_kind, String cinema_outlook,
-			String cinema_seat) {
+	public CinemaVO(){}
+	
+	public CinemaVO(int cinema_id, String cinema_region, String cinema_kind, String cinema_outlook, String cinema_seat,
+			String cinema_name, String cinema_address) {
 		super();
 		this.cinema_id = cinema_id;
 		this.cinema_region = cinema_region;
 		this.cinema_kind = cinema_kind;
 		this.cinema_outlook = cinema_outlook;
 		this.cinema_seat = cinema_seat;
+		this.cinema_name = cinema_name;
+		this.cinema_address = cinema_address;
 	}
 
 	public int getCinema_id() {
@@ -58,10 +64,28 @@ public class CinemaVO {
 		this.cinema_seat = cinema_seat;
 	}
 
+	public String getCinema_name() {
+		return cinema_name;
+	}
+
+	public void setCinema_name(String cinema_name) {
+		this.cinema_name = cinema_name;
+	}
+
+	public String getCinema_address() {
+		return cinema_address;
+	}
+
+	public void setCinema_address(String cinema_address) {
+		this.cinema_address = cinema_address;
+	}
+
 	@Override
 	public String toString() {
 		return "CinemaVO [cinema_id=" + cinema_id + ", cinema_region=" + cinema_region + ", cinema_kind=" + cinema_kind
-				+ ", cinema_outlook=" + cinema_outlook + ", cinema_seat=" + cinema_seat + "]";
+				+ ", cinema_outlook=" + cinema_outlook + ", cinema_seat=" + cinema_seat + ", cinema_name=" + cinema_name
+				+ ", cinema_address=" + cinema_address + "]";
 	}
+	
 	
 }

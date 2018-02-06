@@ -6,7 +6,7 @@ import com.bjs.cinema.domain.CinemaVO;
 
 public interface CinemaDAO {
 
-	public void cinemaInsert(CinemaVO vo)throws Exception;
+/*	public void cinemaInsert(CinemaVO vo)throws Exception;*/
 	
 	public List<CinemaVO> cinemaList()throws Exception;
 }

@@ -6,13 +6,13 @@
 
 <mapper namespace="com.bjs.mappers.cinemaMapper">
 
-	<insert id="cinemaInsert" parameterType="CinemaVO">
+<!-- 	<insert id="cinemaInsert" parameterType="CinemaVO">
 		insert into cinema(
-		cinema_id, cinema_region, cinema_kind, cinema_outlook, cinema_seat
+		cinema_id, cinema_region, cinema_kind, cinema_outlook, cinema_seat, cinema_name, cinema_address
 		)values(
-		cinema_id_seq.nextval, #{cinema_region}, #{cinema_kind}, #{cinema_outlook}, #{cinema_seat}
+		cinema_id_seq.nextval, #{cinema_region}, #{cinema_kind}, #{cinema_outlook}, #{cinema_seat}, #{cinema_name}, #{cinema_address}
 		)
-	</insert>
+	</insert> -->
 	
 	<select id="cinemaList" resultType="CinemaVO">
 		select * from cinema 
