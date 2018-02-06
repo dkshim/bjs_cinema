@@ -32,6 +32,10 @@
 		where Q.qna_id =#{qna_id}
 	</select>
 	
+	<select id="memberInfo" resultType="MemberVO" parameterType="int">
+		select * from member where member_id = #{member_id}	
+	</select>
+	
 </mapper>
 
 

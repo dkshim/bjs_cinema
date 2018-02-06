@@ -13,6 +13,8 @@ public class MemberVO {
 	private String member_kind;
 	private String member_gender;
 	
+	public MemberVO() {}
+
 	public MemberVO(int member_id, String member_identify, String member_email, String member_pwd, String member_name,
 			String member_ssn, String member_phone, int member_mileage, String member_kind, String member_gender) {
 		super();

@@ -7,10 +7,11 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.bjs.member.domain.MemberVO;
 import com.bjs.mypages.domain.QnaVO;
 
 @Repository
-public class QnaDAOImpl implements QnaDAO {
+public class MypagesDAOImpl implements MypagesDAO {
 	
 	@Inject
 	private SqlSession session;
@@ -34,6 +35,11 @@ public class QnaDAOImpl implements QnaDAO {
 	@Override
 	public String qnaWriter(int qna_id) throws Exception {
 		return session.selectOne(namespace+".qnaWriter", qna_id);
+	}
+
+	@Override
+	public MemberVO memberInfo(int member_id) throws Exception {
+		return session.selectOne(namespace+".memberInfo", member_id);
 	}
 
 }

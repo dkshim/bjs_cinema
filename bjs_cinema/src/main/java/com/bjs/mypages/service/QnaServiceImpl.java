@@ -6,13 +6,14 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.bjs.member.domain.MemberVO;
 import com.bjs.mypages.domain.QnaVO;
-import com.bjs.mypages.persistence.QnaDAO;
+import com.bjs.mypages.persistence.MypagesDAO;
 
 @Service
 public class QnaServiceImpl implements QnaService {
 	@Inject
-	private QnaDAO dao;
+	private MypagesDAO dao;
 
 	@Override
 	public void qnaRegist(QnaVO vo) throws Exception {
@@ -32,5 +33,10 @@ public class QnaServiceImpl implements QnaService {
 	@Override
 	public String qnaWriter(int qna_id) throws Exception {
 		return dao.qnaWriter(qna_id);
+	}
+
+	@Override
+	public MemberVO memberInfo(int member_id) throws Exception {
+		return dao.memberInfo(member_id);
 	}
 }
