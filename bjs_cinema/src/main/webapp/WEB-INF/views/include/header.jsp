@@ -237,8 +237,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 top-info hidden-xs">
-                        <span><i class="fa fa-phone"></i>Phone: (123) 456-7890</span>
-                        <span><i class="fa fa-envelope"></i>Email: kobook@kobook.com</span>
+                        <span><i class="fa fa-phone"></i>Phone: (02) 456-7890</span>
+                        <span><i class="fa fa-envelope"></i>Email: bjhcinema@bjscinema.com</span>
                     </div>
                     <div class="col-sm-4 top-info">
                         <ul>
@@ -264,10 +264,10 @@
                         <div id="logo">
 	                        <c:choose>
 	                        	<c:when test="${(person_id == 1) || (person_id == -1)}">
-                        			<h1><a href="/main"><img src="/resources/img/BJSlogo.PNG"></a></h1>
+                        			<h1><a href="/main/main"><img src="/resources/img/BJSlogo.PNG"></a></h1>
                         		</c:when>
                         		<c:otherwise>
-                        		 <h1><a href="/recom"><img src="/resources/img/BJSlogo.PNG"></a></h1>
+                        		 <h1><a href="/main/main"><img src="/resources/img/BJSlogo.PNG"></a></h1>
                         		</c:otherwise>
 	                        </c:choose>
                         </div>
@@ -284,7 +284,7 @@
         						<ul class="memberAdmin">
         						<c:if test="${member_identify == null }">
         							<li>
-										<a href="#" onclick="fn_login()">로그인 | </a>
+										<a href="/main/login" onclick="fn_login()">로그인 | </a>
 									</li>
 								</c:if>	
 								<c:if test="${person_email == null }">
@@ -329,7 +329,7 @@
                                 <ul class="nav navbar-nav">
                                 	<c:choose>
                                 		<c:when test="${(person_id == 1) || (person_id == '-1')}">
-	                        		 		<li><a href="/main">Home</a></li>
+	                        		 		<li><a href="/main/main">Home</a></li>
 	                        			</c:when>
 			                        	<c:otherwise>
 			                        		 <li><a href="/recom">Home</a></li>
