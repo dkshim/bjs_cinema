@@ -29,5 +29,8 @@ public class CinemaDAOImpl implements CinemaDAO {
 		return session.selectList(namespace+".cinemaList");
 	}
 	
-	
+	@Override
+	public List<CinemaVO> cinemaTotal()throws Exception{
+		return session.selectList(namespace+".cinemaTotal");
+	}
 }

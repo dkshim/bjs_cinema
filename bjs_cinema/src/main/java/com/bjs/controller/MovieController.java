@@ -184,11 +184,9 @@ public class MovieController {
 			model.addAttribute(movieservice.movieRead(movie_id));
 		}		
 		
+
+		//영화 상영등급에 따른 이미지 출력
 		
-		//예매 LIST 출력
-		@RequestMapping("/rsvList")
-		public void rsvList(Model model) throws Exception {
-			
-		}
+		
 }
 

@@ -9,4 +9,6 @@ public interface CinemaDAO {
 /*	public void cinemaInsert(CinemaVO vo)throws Exception;*/
 	
 	public List<CinemaVO> cinemaList()throws Exception;
+	
+	public List<CinemaVO> cinemaTotal()throws Exception;
 }

@@ -19,6 +19,15 @@
 		order by cinema_id DESC
 	</select>
 	
+	<select id="cinemaTotal" resultType="CinemaVO">
+		<![CDATA[
+		select CINEMA_REGION from cinema
+		group by CINEMA_REGION
+		]]>
+	</select>
+	
+
+	
 </mapper>
 
 

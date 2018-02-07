@@ -8,4 +8,5 @@ public interface CinemaService {
 
 	public List<CinemaVO> cinemaList() throws Exception;
 	
+	public List<CinemaVO> cinemaTotal()throws Exception;
 }

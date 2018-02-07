@@ -19,4 +19,9 @@ public class CinemaServiceImpl implements CinemaService {
 	public List<CinemaVO> cinemaList()throws Exception {
 		return dao.cinemaList();
 	}
+	
+	@Override
+	public List<CinemaVO> cinemaTotal()throws Exception{
+		return dao.cinemaTotal();
+	}
 }

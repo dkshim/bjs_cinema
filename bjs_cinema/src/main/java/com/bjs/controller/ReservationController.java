@@ -9,6 +9,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
+import javax.swing.plaf.synth.SynthSeparatorUI;
 import javax.validation.Valid;
 
 import org.apache.commons.io.IOUtils;
@@ -47,8 +48,7 @@ public class ReservationController {
 	private CinemaService cinemaService;
 	
 	
-	//영화 LIST 출력
-	
+/*	//영화 LIST 출력
 	@ResponseBody
 	@RequestMapping(value="/movieList", method=RequestMethod.POST)
 	public void movieRsvList(Model model) throws Exception {
@@ -56,8 +56,10 @@ public class ReservationController {
 		List<MovieVO> list = null;
 		list = movieService.movieList();
 		
+		System.out.println(list.toString());
+		
 		model.addAttribute("movieList", list);
-	}
+	}*/
 	
 	
 	// 극장 LIST 출력
@@ -66,10 +68,18 @@ public class ReservationController {
 
 		List<CinemaVO> list = null;
 		list = cinemaService.cinemaList();
-
+		model.addAttribute("cinemaTotal", cinemaService.cinemaTotal());
+		
+		System.out.println(cinemaService.cinemaTotal());
+		
+		model.addAttribute("movieList",movieService.movieList());
 		model.addAttribute("cinemaList", list);
 	}
 	
-
+/*	//포스터 출력 
+	@RequestMapping(value="moviePoster", method=RequestMethod.POST)
+	public */
+	
+	
 }
 
