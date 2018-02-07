@@ -39,33 +39,34 @@
         <div class="slider">
             <div class="fs_loader"></div>
             <div class="slide">
-                <img src="images/fraction-slider/base.jpg" width="1920" height="auto" data-in="fade" data-out="fade" />
+                <img src="/resources/img/main/1112.jpg" width="1920" height="700" data-in="fade" data-out="fade" />
 
-                <img src="images/fraction-slider/slider-boy.png" width="600" height="600" data-position="30,1100" data-in="left" data-out="right" data-delay="700"/>
+                <img src="/resources/img/main/josun.jpg" width="270" height="auto" data-position="30,1100" data-in="left" data-out="right" data-delay="700"/>
 
-                <p class="slide-1" data-position="50,610" data-in="fade" data-out="fade" data-delay="800">fully responsive</p>
-                <p class="slide-1" data-position="100,560" data-in="fade" data-out="fade" data-delay="1200">Our latest designs </p>
-                <p class="slide-1" data-position="150,500" data-in="fade" data-out="fade" data-delay="1600">Simply & Clear Design</p>
+                <p class="slide-1" data-position="50,610" data-in="fade" data-out="fade" data-delay="800">조선명탐정 3.</p>
+                <p class="slide-1" data-position="100,560" data-in="fade" data-out="fade" data-delay="1200">들어와 들어와 </p>
+                <p class="slide-1" data-position="150,500" data-in="fade" data-out="fade" data-delay="1600">후회 안한다니까?!</p>
 
-                <p class="slide-1a" data-position="220,770" data-in="bottom" data-out="bottom" data-delay="2000" data-ease-in="easeOutBounce">SEO Friendly Website</p>
-                <p class="slide-1a" data-position="267,698" data-in="bottom" data-out="bottom" data-delay="3200"  data-ease-in="easeOutBounce">7 combination color option</p>
-                <p class="slide-1a" data-position="314,760" data-in="bottom" data-out="bottom" data-delay="4200"  data-ease-in="easeOutBounce">Animated layer slider</p>
-                <p class="slide-1a" data-position="361,753" data-in="bottom" data-out="bottom" data-delay="5200"  data-ease-in="easeOutBounce">Much More Featured...</p>
+                <p class="slide-1a" data-position="220,770" data-in="bottom" data-out="bottom" data-delay="2000" data-ease-in="easeOutBounce">우왕굳</p>
+                <p class="slide-1a" data-position="267,698" data-in="bottom" data-out="bottom" data-delay="3200"  data-ease-in="easeOutBounce">신기하냐?</p>
+                <p class="slide-1a" data-position="314,760" data-in="bottom" data-out="bottom" data-delay="4200"  data-ease-in="easeOutBounce">으헤헤헤</p>
+                <p class="slide-1a" data-position="361,753" data-in="bottom" data-out="bottom" data-delay="5200"  data-ease-in="easeOutBounce">ㅋㅋㅋㅋㅋ</p>
             </div>
 
             <div class="slide">
-                <img src="images/fraction-slider/base_2.jpg" width="1920" height="auto" data-in="fade" data-out="fade" />
+                <img src="/resources/img/main/15169432327320.jpg" width="1950" height="530" data-in="fade" data-out="fade" />
 
-                <img src="images/fraction-slider/slider-girl.png" width="600" height="545" data-position="20,400" data-in="right" data-0ut="bottom" data-delay="500"/>
+                <img src="" width="400" height="490" data-position="20,400" data-in="right" data-0ut="bottom" data-delay="500"/>
 
-                <p class="slide-2 " data-position="120,900" data-in="bottom" data-out="top" data-delay="2000">Your-Business</p>
+                <p class="slide-2 " data-position="120,900" data-in="bottom" data-out="top" data-delay="2000">블랙팬서</p>
                 <p class="slide-2a " data-position="210,900" data-in="left" data-out="right" data-delay="3000">A responsive multipurpose Theme</p>
                 <p class="slide-2b " data-position="270,900" data-in="top" data-out="bottom" data-delay="4000" data-ease-in="easeOutBounce">For Your Prestigious World !</p>
             </div>
 
             <div class="slide">
-                <img src="images/fraction-slider/base_3.jpg"  width="1920" height="auto" data-in="fade" data-out="fade" />
-
+               
+                <img src="/resources/img/main/eee.jpg"  width="1950" height="450" data-in="fade" data-out="fade" />
+				
                 <p class="slide-heading" data-position="130,370" data-in="top" data-out="top" data-ease-in="easeOutBounce" data-delay="1500">Electrify theme</p>
 
                 <p class="sub-line" data-position="230,370" data-in="right" data-out="left" data-delay="2500">grid system and responsive design</p>

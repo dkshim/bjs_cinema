@@ -2,42 +2,32 @@ package com.bjs.login.DTO;
 
 public class LoginDTO {
 
-	private String person_email;
-	private String person_pwd;
-	private boolean use_cookie;
+	private String member_identify;
+	private String member_pwd;
 	
 	public LoginDTO(){}
 
-	public LoginDTO(String person_email, String person_pwd, boolean use_cookie) {
+	public LoginDTO(String member_identify, String member_pwd) {
 		super();
-		this.person_email = person_email;
-		this.person_pwd = person_pwd;
-		this.use_cookie = use_cookie;
+		this.member_identify = member_identify;
+		this.member_pwd = member_pwd;
 	}
 
-	public String getPerson_email() {
-		return person_email;
+	public String getMember_identify() {
+		return member_identify;
 	}
 
-	public void setPerson_email(String person_email) {
-		this.person_email = person_email;
+	public void setMember_identify(String member_identify) {
+		this.member_identify = member_identify;
 	}
 
-	public String getPerson_pwd() {
-		return person_pwd;
+	public String getMember_pwd() {
+		return member_pwd;
 	}
 
-	public void setPerson_pwd(String person_pwd) {
-		this.person_pwd = person_pwd;
+	public void setMember_pwd(String member_pwd) {
+		this.member_pwd = member_pwd;
 	}
-
-	public boolean isUse_cookie() {
-		return use_cookie;
-	}
-
-	public void setUse_cookie(boolean use_cookie) {
-		this.use_cookie = use_cookie;
-	}
-
+	
 	
 }

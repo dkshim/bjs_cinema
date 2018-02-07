@@ -42,14 +42,15 @@
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
-                <form action="" method="">
-                    <input name="user" type="text" placeholder="username">
-                    <input type="password" placeholder="password">
-                    <button class="btn btn-info btn-block login" type="submit">Login</button>
+                <form action="/main/loginPost" method="post">
+                    <input name="member_identify" type="text" placeholder="아이디를 입력해주세요.">
+                    <input name="member_pwd" type="password" placeholder="password">
+                    <button class="btn btn-info btn-block login" type="submit">Login</button>        
                 </form>
             </div>
         </div>
 </div>
+
 
 
 <!-- 푸터 -->

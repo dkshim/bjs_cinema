@@ -2,16 +2,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <% 
-/* 	String cur_id = "-1";
+/*  	String cur_id = "-1";
 	
-	if(session.getAttribute("person_id") != null){
-		cur_id = (String)session.getAttribute("person_id")+"";
+	if(session.getAttribute("member_identify") != null){
+		cur_id = (String)session.getAttribute("member_identify")+"";
 		
 	}
 	
 	int person_id = Integer.parseInt(cur_id);
-	request.setAttribute("person_id", person_id);
-			 */
+	request.setAttribute("member_identify", person_id); */
+			 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -287,17 +287,17 @@
 										<a href="/main/login" onclick="fn_login()">로그인 | </a>
 									</li>
 								</c:if>	
-								<c:if test="${person_email == null }">
+								<c:if test="${member_identify == null }">
 									<li>
 										<a href="#" onclick="fn_login()">회원가입 | </a>
 									</li>
 								</c:if>	
-								<c:if test="${person_email == null }">
+								<c:if test="${member_identify == null }">
 									<li>
 										<a href="#" onclick="fn_login()">My BJS | </a>
 									</li>
 								</c:if>	
-								<c:if test="${person_email == null }">
+								<c:if test="${member_identify == null }">
 									<li>
 										<a href="#" onclick="fn_login()">고객센터</a>
 									</li>
@@ -306,8 +306,8 @@
 							</div>
 							
 							<div style="margin-left: 80px;">
-								<c:if test="${person_email != null }">
-									<span> ${person_name }님 로그인중 
+								<c:if test="${member_identify != null }">
+									<span> ${ LOGIN.member_name }님 로그인중 
 										<a href="#" onclick="fn_newAlarm()">새로온 알림  [ </a> 
 										<a href="#" id="alarm_new"></a> 
 										<a href="#"> ]</a> 
@@ -362,9 +362,9 @@
                                     
                                     <li><a href="/community/blackList" >Store</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="/community/blackList">신고합니다</a></li>
-                                            <li><a href="/community/donateList">무료나눔</a></li>
-                                            <li><a href="/community/photoReviewList">포토리뷰</a></li>
+                                            <li><a href="/community/blackList">팝콘</a></li>
+                                            <li><a href="/community/donateList">음료</a></li>
+                                            <li><a href="/community/photoReviewList">세트메뉴</a></li>
                                             <li><a href="/board/boardList">공지사항</a></li>
                                             <li><a href="/community/qna">자주묻는질문</a></li>
                                         </ul>

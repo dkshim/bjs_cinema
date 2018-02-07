@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
+import com.bjs.login.DTO.LoginDTO;
 import com.bjs.member.domain.MemberVO;
 import com.bjs.member.persistence.MemberDAO;
 
@@ -13,7 +14,7 @@ import com.bjs.member.persistence.MemberDAO;
 public class MemberServiceImpl implements MemberService {
 
 	@Inject
-	MemberDAO memberDao;
+	private MemberDAO memberDao;
 	
 	//1-1 회원 로그인 체크
 	@Override
@@ -41,6 +42,13 @@ public class MemberServiceImpl implements MemberService {
 	public void logout(HttpSession session) {
 		//세션 변수 개별 삭제 -> 세션 정보 초기화
 		session.invalidate();
+	}
+
+	//로그인 처리
+	@Override
+	public MemberVO login(String member_identify) throws Exception {
+		
+		return memberDao.login(member_identify);
 	}
 
 }
