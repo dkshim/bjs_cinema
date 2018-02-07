@@ -68,6 +68,8 @@ public class ReservationController {
 
 		List<CinemaVO> list = null;
 		list = cinemaService.cinemaList();
+		
+		
 		model.addAttribute("cinemaTotal", cinemaService.cinemaTotal());
 		
 		System.out.println(cinemaService.cinemaTotal());
