@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,12 +31,55 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+    	$(document).ready(function(){
+    		$("#btnLogin").click(function(){
+    			var member_identify = $("#member_identify").val();
+    			var member_pwd = $("#member_pwd").val();
+    			
+    			if(member_identify==""){
+    				alert("아이디를 입력해주세요.");
+    				$("#member_identify").focus();
+    				return;  //함수 종료
+    			}
+    			if(member_pwd==""){
+    				alert("비밀번호를 입력해주세요.");
+    				$("#member_pwd").focus();
+    				return; 
+    			}
+    			//폼 내부의 데이터를 전송할 주소
+    			document.form1.action="/main/loginCheck";
+    			//제출
+    			document.form1.submit();
+
+    		});
+    	});
+    	
+    </script>
 </head>
 <body>
 
 <!-- 헤더 -->
    <jsp:include page="/WEB-INF/views/include/header.jsp" />
   <!-- /헤더 -->
+
+ 		 <section class="page_head">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="page_title">
+							<h2>로그인</h2>
+						</div>
+						<nav id="breadcrumbs">
+							<ul>
+								<li><a href="/main/main">홈</a>/</li>
+								<li><b>로그인</b></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</section>
   
   
 	<div class="container">
@@ -42,10 +87,20 @@
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
-                <form action="/main/loginPost" method="post">
+                <form name="form1" method="post">
                     <input name="member_identify" type="text" placeholder="아이디를 입력해주세요.">
                     <input name="member_pwd" type="password" placeholder="password">
-                    <button class="btn btn-info btn-block login" type="submit">Login</button>        
+                    <button class="btn btn-info btn-block login" type="button" id="btnLogin">Login</button>        
+                    <c:if test="${msg == 'failure'}">
+                    	<div style="color: red">
+                    		아이디 또는 비밀번호가 일치하지 않습니다.
+                    	</div>
+                    </c:if>
+                    <c:if test="${msg=='logout'}">
+                    	<div style="color:blue">
+                    		로그아웃 처리 되었습니다.
+                    	</div>
+                    </c:if>
                 </form>
             </div>
         </div>

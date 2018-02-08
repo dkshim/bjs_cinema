@@ -18,5 +18,10 @@ SELECT * FROM member WHERE member_identify=#{member_identify} AND member_pwd = #
 
 </select>
 
-
+<!-- ****** 회원 가입 ****** -->
+<insert id="create">
+	insert into member 
+		(member_id, member_identify, member_email, member_pwd, member_name, member_ssn, member_phone, member_mileage, member_kind, member_gender)
+		values(member_id_seq.nextval, #{member_identify}, #{member_email}, #{member_pwd}, #{member_name}, #{member_ssn}, #{member_phone}, 0, N,#{member_gender})	
+</insert>
 </mapper>

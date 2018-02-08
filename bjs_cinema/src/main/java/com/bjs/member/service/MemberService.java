@@ -16,7 +16,10 @@ public interface MemberService {
 	//2-1 회원 로그아웃
 	public void logout(HttpSession session);
 	
+	//3-1 회원 가입
+	public void regist(MemberVO member)throws Exception;
+	
 	//로그인 처리
-	public MemberVO login(String member_identify) throws Exception;
+	//public MemberVO login(String member_identify) throws Exception;
 	
 }

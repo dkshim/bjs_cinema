@@ -15,11 +15,11 @@
                         <h4><span>About Us</span></h4>
                     </div>
                     <div class="widget_content">
-                        <p>This site is made for every students that want to buy the cheep and variable books. Find the book what you want.</p>
+                        <p>This site is made for every Users that want to buy the movie tickets. Find the movie what you want.</p>
                         <ul class="contact-details-alt">
                             <li><i class="fa fa-map-marker"></i> <p><strong>Address</strong>: Seoul Gasan Digital Complex 1-151</p></li>
-                            <li><i class="fa fa-user"></i> <p><strong>Phone</strong>: 070)5039-5815</p></li>
-                            <li><i class="fa fa-envelope"></i> <p><strong>Email</strong>: <a href="#"> admin@kobook.com</a></p></li>
+                            <li><i class="fa fa-user"></i> <p><strong>Phone</strong>: 02)5039-5815</p></li>
+                            <li><i class="fa fa-envelope"></i> <p><strong>Email</strong>: <a href="#"> admin@BJSCINEMA.com</a></p></li>
                         </ul>
                     </div>
                 </div>
@@ -29,12 +29,9 @@
                     </div>
                     <div class="widget_content">
                         <ul class="links">
-                            <li><a href="#">LEE JAE SEUNG<span>December 01, 1991</span></a></li>
-                            <li><a href="#">JUNG A REUM<span>July 03, 1993</span></a></li>
-                            <li><a href="#">LEE SEUNG YEON<span>June 29, 1993</span></a></li>
+                            <li><a href="#">BAE JAE HYUN<span>August 08, 1988</span></a></li>
                             <li><a href="#">JO JI HO<span>March 21, 1989</span></a></li>
                             <li><a href="#">SHIM DONG KIL<span>July 04, 1990</span></a></li>
-                            <li><a href="#">KIM MIN JU<span>March 14, 1994</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,15 +42,15 @@
                     <div class="widget_content">
                         <ul class="tweet_list">
                             <li class="tweet_content item">
-                                <p class="tweet_link"><a href="#">@kobook_official </a> 코북 사이트 공식 계정</p>
+                                <p class="tweet_link"><a href="#">@BJS_official </a> BJS 사이트 공식 계정</p>
                                 <span class="time">25 November 2017</span>
                             </li>
                             <li class="tweet_content item">
-                                <p class="tweet_link"><a href="#">@kobook_masters6</a> 개발자 공식 계정</p>
+                                <p class="tweet_link"><a href="#">@BJS_masters6</a> 개발자 공식 계정</p>
                                 <span class="time">25 November 2017</span>
                             </li>
                             <li class="tweet_content item">
-                                <p class="tweet_link"><a href="#">@kobook_for_you</a> 코북 신간도서 및 찾는 도서 알림 계정</p>
+                                <p class="tweet_link"><a href="#">@BJS_for_you</a> BJS 개봉 영화 알림 계정</p>
                                 <span class="time">25 November 2017</span>
                             </li>
                         </ul>
@@ -80,7 +77,7 @@
 		<div class="container">
 			<div class="row">
             <div class="col-sm-6">
-                <p class="copyright">&copy; Copyright 2017 kobook | Powered by  <a href="http://www.jqueryrain.com/">jQuery Rain</a></p>
+                <p class="copyright">&copy; Copyright 2017 BJS CINEMA | Powered by  <a href="http://www.jqueryrain.com/">jQuery Rain</a></p>
             </div>
 
             <div class="col-sm-6 ">

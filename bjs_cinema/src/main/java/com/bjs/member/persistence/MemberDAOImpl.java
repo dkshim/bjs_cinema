@@ -38,11 +38,18 @@ public class MemberDAOImpl implements MemberDAO {
 	public void logout(HttpSession session) {
 	}
 
-	//로그인 처리
+	//3-1 회원 가입
 	@Override
-	public MemberVO login(String member_identify) throws Exception {
+	public void create(MemberVO vo) throws Exception {
+		session.insert(namespace+".create", vo);
 		
-		return session.selectOne(namespace+".login", member_identify);
 	}
+
+	//로그인 처리
+	/*@Override
+	public MemberVO login(String member_identify, String member_pwd) throws Exception {
+		// TODO Auto-generated method stub
+		return return session.selectOne(namespace+".login", member_identify);
+	}*/
 
 }

@@ -14,6 +14,9 @@ public interface MemberDAO {
 	//2-1 회원 로그아웃
 	public void logout(HttpSession session);
 	//UserDAO의 생성 및 SQL 처리
-	public MemberVO login(String member_identify)throws Exception;
+	//public MemberVO login(String member_identify, String member_pwd)throws Exception;
+	
+	//3-1 회원 가입
+	public void create(MemberVO vo)throws Exception;
 	
 }

@@ -44,11 +44,18 @@ public class MemberServiceImpl implements MemberService {
 		session.invalidate();
 	}
 
-	//로그인 처리
+	//3-1 회원 가입
 	@Override
+	public void regist(MemberVO member) throws Exception {
+		memberDao.create(member);
+		
+	}
+
+	//로그인 처리
+	/*@Override
 	public MemberVO login(String member_identify) throws Exception {
 		
 		return memberDao.login(member_identify);
-	}
+	}*/
 
 }

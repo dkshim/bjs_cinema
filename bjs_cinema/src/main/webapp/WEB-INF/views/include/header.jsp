@@ -208,7 +208,7 @@
 
 
 </head>
-<body onload="InitializeStaticMenu();">
+<body >
 	<c:if test="${person_email != null }">
     	<div id="STATICMENU" class="col-sm-1">
     		<div class="sidebar">
@@ -289,7 +289,7 @@
 								</c:if>	
 								<c:if test="${member_identify == null }">
 									<li>
-										<a href="#" onclick="fn_login()">회원가입 | </a>
+										<a href="/main/memberRegister" onclick="fn_login()">회원가입 | </a>
 									</li>
 								</c:if>	
 								<c:if test="${member_identify == null }">
@@ -306,15 +306,17 @@
 							</div>
 							
 							<div style="margin-left: 80px;">
+						
 								<c:if test="${member_identify != null }">
-									<span> ${ LOGIN.member_name }님 로그인중 
+									<span> ${sessionScope.member_name} 님 로그인중 
 										<a href="#" onclick="fn_newAlarm()">새로온 알림  [ </a> 
 										<a href="#" id="alarm_new"></a> 
 										<a href="#"> ]</a> 
-										<a href="#" onclick="fn_logout()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 로그아웃</a>
+										<a href="/main/logout" onclick="fn_logout()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 로그아웃</a>
 									</span> 
 									<form action="/alarmUpdate" method="post" name="alarmUpdate"></form>
 								</c:if>
+							
 							</div>
 
                             <div class="navbar-header">
