@@ -27,9 +27,15 @@
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/switcher.css" media="screen" />
 <style type="text/css">
-	.btn-default {
-		float: right;
-	}
+.btn-default {
+	float: right;
+}
+.fa-male{
+	color: blue;
+}
+.fa-female{
+	color: red;
+}
 </style>
 </head>
 <body class="home">
@@ -39,7 +45,7 @@
 
 	<!--start wrapper-->
 	<section class="wrapper">
- 		<section class="page_head">
+		<section class="page_head">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
@@ -57,115 +63,113 @@
 				</div>
 			</div>
 		</section>
- <div class="container">
-        <div class="row sub_content">
-            <div class="col-lg-5 col-sm-5 col-lg-offset-1">
-                <div class="dividerHeading">
-                    <h4><span>회원 정보 변경</span></h4>
-                </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" class="form-control" value="${memberInfo.member_identify }" readonly="readonly">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
-                            <input type="password" class="form-control" id="memberPwd" placeholder="Password" name="member_pwd">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" id="memberCheck" class="btn btn-default btn-lg button">확인</button>
-                    </div>
-            </div>
-        </div>
-        <div class="section __half">
-        <h3 class="subject __underline">
-          <em>회원정보입력</em>
-        </h3>
-        <div class="row">
-          <div class="col-md">
-            <label>이름</label>
-          </div>
-          <div class="col-md">
-            <div class="ui-input __disable">
-              <label>${memberInfo.member_name }</label>
-            </div>
-          </div>
-        </div>
-        
-        
-        <div class="row">
-          <div class="col-md">
-            <label>아이디</label>
-          </div>
-          <div class="col-md">
-            <div class="ui-input __disable">
-              <label>${memberInfo.member_identify }</label>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-md">
-            <label>휴대폰 번호</label>
-          </div>
-           <div class="col-md">
-        	<div class="form-wrap __mobile">
-        		<select title="통신사" id="celphone_carrier" name="celphone_carrier" class="ui-select"> 															
+		<div class="container">
+			<div class="row sub_content" id="pwdChk">
+				<div class="col-lg-5 col-sm-5 col-lg-offset-1">
+					<div class="dividerHeading">
+						<h4>
+							<span>비밀 번호 확인</span>
+						</h4>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							<input type="text" class="form-control" value="${memberInfo.member_identify }" readonly="readonly">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<i class="fa fa-unlock-alt"></i>
+							</span>
+							<input type="password" class="form-control" id="memberPwd" placeholder="Password" name="member_pwd">
+						</div>
+					</div>
+					<div class="form-group">
+						<button type="submit" id="memberCheck" class="btn btn-default btn-lg button">확인</button>
+					</div>
+				</div>
+			</div>
+			<!-- 회원정보 수정 -->
+			<div class="row sub_content" id="memberModify">
+				<div class="col-lg-5 col-sm-5 col-lg-offset-1">
+					<div class="dividerHeading">
+						<h4>
+							<span>회원 정보 변경</span>
+						</h4>
+					</div>
 					
-						<option value="1" selected="selected">SKT</option>
-					
-						<option value="2">KT</option>
-					
-						<option value="3">LGU+</option>
-					
-						<option value="4">SKT알뜰폰</option>
-					
-						<option value="5">KT알뜰폰</option>
-					
-						<option value="6">LGU+알뜰폰</option>
-					
-						<option value="9">ETC</option>
-																				
-				</select>
-              <select title="통신사번호" id="celphone_no1" name="celphone_no1" class="ui-select">
-				
-					<option value="010" selected="selected">010</option>
-				
-					<option value="011">011</option>
-				
-					<option value="016">016</option>
-				
-					<option value="017">017</option>
-				
-					<option value="018">018</option>
-				
-					<option value="019">019</option>
-																	
-			</select>
-              <div class="ui-input">
-                <input id="celphone_no2" name="celphone_no2" type="tel" value="${memberInfo.member_phone }" >
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-md">
-            <label for="user-id">E-Mail</label>
-          </div>
-          <div class="col-md">
-         	  <div class="form-wrap __normal">
-	            <div class="ui-input">
-	              <input type="text" name="email" id="email" value="${memberInfo.member_email }" >
-          	    </div>
-             </div>
-           </div>
-         </div>
-      </div>
-    </div>
+					<div class="row">
+						<label>이름</label>
+						<label>${memberInfo.member_name }</label>
+					</div>
+					<div class="row">
+						<label>성별</label>
+						<c:if test="${memberInfo.member_gender=='M' }">
+							<label>남자  <i class="fa fa-male"></i></label>
+						</c:if>
+						<c:if test="${memberInfo.member_gender=='F' }">
+							<label>여자  <i class="fa fa-female"></i></label>
+						</c:if>
+					</div>
+					<div class="row">
+						<label>회원등급</label>
+						<label></label>
+						<c:if test="${memberInfo.member_kind == 'G'}">
+							<label>골드<img src="/resources/img/goldImg.jpg"></label>
+						</c:if>
+						<c:if test="${memberInfo.member_kind=='S' }">
+							<label>실버<img src="/resources/img/silverImg.jpg"></label>
+						</c:if>
+						<c:if test="${memberInfo.member_kind=='N' }">
+							<label>일반<img src="/resources/img/nomalImg.jpg"></label>
+						</c:if>
+					</div>
+					<div class="row">
+						<label>아이디</label>
+						<label>${memberInfo.member_identify }</label>
+					</div>
+					<div class="row">
+						<label>생년월일</label>
+						<input id="ssn_y" name="ssn_y" type="text" value="${ssn_y}" size="4px"> -
+						<input id="ssn_m" name="ssn_m" type="text" value="${ssn_m}" size="2px"> -
+						<input id="ssn_d" name="ssn_d" type="text" value="${ssn_d}" size="2px">
+					</div>
+					<div class="row">
+						<label>휴대폰 번호</label>
+							<select title="통신사" id="celphone_carrier" name="celphone_carrier">
+								<option value="1" selected="selected">SKT</option>
+								<option value="2">KT</option>
+								<option value="3">LGU+</option>
+								<option value="4">SKT알뜰폰</option>
+								<option value="5">KT알뜰폰</option>
+								<option value="6">LGU+알뜰폰</option>
+								<option value="9">ETC</option>
+							</select>
+							<select title="통신사번호" id="celphone_no1" name="celphone_no1">
+								<option value="010" selected="selected">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="018">018</option>
+								<option value="019">019</option>
+							</select>
+							<input id="celphone_no2" name="celphone_no2" type="text" value="${phone1}" size="5px"> -
+							<input id="celphone_no3" name="celphone_no3" type="text" value="${phone2 }" size="5px">
+					</div>
+					<div class="row">
+						<label>E-Mail</label>
+						<input type="text" name="email1" id="email1" value="${email1 }" size="10px">@ 
+						<input type="text" name="email2" id="email2" value="${email2 }">
+					</div>
+					<div class="form-group">
+						<button type="reset" id="modiCancel" class="btn btn-warning btn-lg button">취소</button>
+						<button type="submit" id="modiOk" class="btn btn-primary btn-lg button">수정완료</button>
+					</div>
+				</div>
+			</div>
+			<!-- 회원정보 수정 -->
+		</div>
 	</section>
 	<!--end wrapper-->
 
@@ -197,16 +201,33 @@
 		src="/resources/js/jquery-scrolltofixed-min.js"></script>
 
 	<script src="/resources/js/main.js"></script>
-	
+
 	<script type="text/javascript">
 		var member_pwd = ${memberInfo.member_pwd};
 		$(function() {
+			$("#memberModify").hide();
+			
 			$("#memberCheck").on('click', function() {
 				if(member_pwd == $("#memberPwd").val()){
-					$.ajax()
+					$("#pwdChk").hide();
+					$("#memberModify").show("slow");
+				}else if($("#memberPwd").val()==''){
+					alert("비밀번호를 입력 해주세요.");
 				}else {
-					alert("비밀번호를 다시 확인해주세요.");
+					alert("비밀번호가 틀렸습니다.")
 					$("#memberPwd").val('');
+				}
+			});
+			
+			$("#modiCancel").on('click', function(){
+				if(confirm("수정안해?")){
+					location.href = "/main/main";
+				}
+			});
+			
+			$("#modiOk").on('click', function(){
+				if(confirm("수정 다 했어?")){
+					alert("수정되었습니다");
 				}
 			});
 		});

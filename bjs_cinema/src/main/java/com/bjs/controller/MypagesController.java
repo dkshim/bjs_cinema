@@ -54,7 +54,26 @@ public class MypagesController {
 	//내 회원정보보기
 	@RequestMapping(value="memberInfo", method=RequestMethod.GET)
 	public void memberInfo(Model model) throws Exception {
-		int member_id = 3;
+		int member_id = 4;
+		String phone = mpService.memberInfo(member_id).getMember_phone();
+		String ssn = mpService.memberInfo(member_id).getMember_ssn();
+		String email = mpService.memberInfo(member_id).getMember_email();
+		
 		model.addAttribute("memberInfo",mpService.memberInfo(member_id));
+		
+		String phone1 = phone.substring(4, phone.length());
+		String phone2[] = phone1.split("-");
+		model.addAttribute("phone1",phone2[0]);
+		model.addAttribute("phone2",phone2[1]);
+		
+		String ssn1[] = ssn.split("-");
+		model.addAttribute("ssn_y", ssn1[0]);
+		model.addAttribute("ssn_m", ssn1[1]);
+		model.addAttribute("ssn_d", ssn1[2]);
+		
+		String email1[] = email.split("@");
+		model.addAttribute("email1", email1[0]);
+		model.addAttribute("email2", email1[1]);		
+		
 	}
 }
