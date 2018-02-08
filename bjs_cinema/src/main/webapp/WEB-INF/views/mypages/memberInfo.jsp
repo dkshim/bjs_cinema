@@ -27,10 +27,6 @@
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/switcher.css" media="screen" />
 <style type="text/css">
-	.li_table ul {margin: 0;padding: 0;list-style-type: none;} 
-	.li_table .qnaCol {font-weight: bold;text-align: center;}
-	.li_table ul li {text-align: center;display:inline-block;margin: 0;width: 280px;}
-	.li_table ul .col {width: 600px;} 
 	.btn-default {
 		float: right;
 	}
@@ -67,7 +63,6 @@
                 <div class="dividerHeading">
                     <h4><span>회원 정보 변경</span></h4>
                 </div>
-                <form id="loginform" method="post" name="loginform" action="">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -77,15 +72,99 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
-                            <input type="password" class="form-control" placeholder="Password" name="member_pwd">
+                            <input type="password" class="form-control" id="memberPwd" placeholder="Password" name="member_pwd">
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-default btn-lg button">확인</button>
+                        <button type="submit" id="memberCheck" class="btn btn-default btn-lg button">확인</button>
                     </div>
-                </form>
             </div>
         </div>
+        <div class="section __half">
+        <h3 class="subject __underline">
+          <em>회원정보입력</em>
+        </h3>
+        <div class="row">
+          <div class="col-md">
+            <label>이름</label>
+          </div>
+          <div class="col-md">
+            <div class="ui-input __disable">
+              <label>${memberInfo.member_name }</label>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="row">
+          <div class="col-md">
+            <label>아이디</label>
+          </div>
+          <div class="col-md">
+            <div class="ui-input __disable">
+              <label>${memberInfo.member_identify }</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md">
+            <label>휴대폰 번호</label>
+          </div>
+           <div class="col-md">
+        	<div class="form-wrap __mobile">
+        		<select title="통신사" id="celphone_carrier" name="celphone_carrier" class="ui-select"> 															
+					
+						<option value="1" selected="selected">SKT</option>
+					
+						<option value="2">KT</option>
+					
+						<option value="3">LGU+</option>
+					
+						<option value="4">SKT알뜰폰</option>
+					
+						<option value="5">KT알뜰폰</option>
+					
+						<option value="6">LGU+알뜰폰</option>
+					
+						<option value="9">ETC</option>
+																				
+				</select>
+              <select title="통신사번호" id="celphone_no1" name="celphone_no1" class="ui-select">
+				
+					<option value="010" selected="selected">010</option>
+				
+					<option value="011">011</option>
+				
+					<option value="016">016</option>
+				
+					<option value="017">017</option>
+				
+					<option value="018">018</option>
+				
+					<option value="019">019</option>
+																	
+			</select>
+              <div class="ui-input">
+                <input id="celphone_no2" name="celphone_no2" type="tel" value="${memberInfo.member_phone }" >
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md">
+            <label for="user-id">E-Mail</label>
+          </div>
+          <div class="col-md">
+         	  <div class="form-wrap __normal">
+	            <div class="ui-input">
+	              <input type="text" name="email" id="email" value="${memberInfo.member_email }" >
+          	    </div>
+             </div>
+           </div>
+         </div>
+      </div>
     </div>
 	</section>
 	<!--end wrapper-->
@@ -118,6 +197,20 @@
 		src="/resources/js/jquery-scrolltofixed-min.js"></script>
 
 	<script src="/resources/js/main.js"></script>
+	
+	<script type="text/javascript">
+		var member_pwd = ${memberInfo.member_pwd};
+		$(function() {
+			$("#memberCheck").on('click', function() {
+				if(member_pwd == $("#memberPwd").val()){
+					$.ajax()
+				}else {
+					alert("비밀번호를 다시 확인해주세요.");
+					$("#memberPwd").val('');
+				}
+			});
+		});
+	</script>
 
 	<!-- Start Style Switcher -->
 	<div class="switcher"></div>

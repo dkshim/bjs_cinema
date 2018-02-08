@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bjs.member.domain.MemberVO;
 import com.bjs.mypages.domain.QnaVO;
-import com.bjs.mypages.service.QnaService;
+import com.bjs.mypages.service.MypagesService;
 
 @Controller
 @RequestMapping("/mypages/*")
 public class MypagesController {
 	@Inject
-	private QnaService mpService;
+	private MypagesService mpService;
 
 	// qna문의 글 작성 폼 이동
 	@RequestMapping(value = "qnaRegist", method = RequestMethod.GET)
@@ -51,6 +51,7 @@ public class MypagesController {
 		model.addAttribute("writer", mpService.qnaWriter(qna_id));
 	}
 
+	//내 회원정보보기
 	@RequestMapping(value="memberInfo", method=RequestMethod.GET)
 	public void memberInfo(Model model) throws Exception {
 		int member_id = 3;

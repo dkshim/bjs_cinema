@@ -11,7 +11,7 @@ import com.bjs.mypages.domain.QnaVO;
 import com.bjs.mypages.persistence.MypagesDAO;
 
 @Service
-public class QnaServiceImpl implements QnaService {
+public class MypagesServiceImpl implements MypagesService {
 	@Inject
 	private MypagesDAO dao;
 

@@ -5,7 +5,7 @@ import java.util.List;
 import com.bjs.member.domain.MemberVO;
 import com.bjs.mypages.domain.QnaVO;
 
-public interface QnaService {
+public interface MypagesService {
 	public void qnaRegist(QnaVO vo) throws Exception;
 	public List<QnaVO> qnaMyList(int member_id) throws Exception;
 	public QnaVO qnaRead(int qna_id) throws Exception;
