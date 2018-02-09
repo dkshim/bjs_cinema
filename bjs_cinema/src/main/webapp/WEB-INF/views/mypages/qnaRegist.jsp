@@ -12,7 +12,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Bjs/qna</title>
+<title>Bjs/Qna</title>
 <meta name="description" content="">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -24,7 +24,7 @@
 	media="screen" data-name="skins">
 <link rel="stylesheet" href="/resources/css/layout/wide.css"
 	data-name="layout">
-
+<link rel="icon" href="/resources/img/B.PNG">
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/switcher.css" media="screen" />
 </head>

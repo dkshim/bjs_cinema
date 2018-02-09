@@ -23,7 +23,7 @@
 	media="screen" data-name="skins">
 <link rel="stylesheet" href="/resources/css/layout/wide.css"
 	data-name="layout">
-<link rel="icon" href="/resources/img/gold.jpg">
+<link rel="icon" href="/resources/img/B.PNG">
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/switcher.css" media="screen" />
 <style type="text/css">
@@ -90,6 +90,13 @@
 					</div>
 				</div>
 			</div>
+			
+			<form role="form" action="memberModify" method="post">
+				<input type='hidden' name='member_id' value="${memberInfo.member_id}">
+				<input type='hidden' id='member_phone' name='member_phone' value="${memberInfo.member_phone}">
+				<input type='hidden' id='member_email' name='member_email' value="${memberInfo.member_email}">
+				<input type='hidden' id='member_ssn' name='member_ssn' value="${memberInfo.member_ssn}">
+			</form>
 			<!-- 회원정보 수정 -->
 			<div class="row sub_content" id="memberModify">
 				<div class="col-lg-5 col-sm-5 col-lg-offset-1">
@@ -146,7 +153,7 @@
 								<option value="6">LGU+알뜰폰</option>
 								<option value="9">ETC</option>
 							</select>
-							<select title="통신사번호" id="celphone_no1" name="celphone_no1">
+							<select title="통신사번호" id="phone0" name="phone0">
 								<option value="010" selected="selected">010</option>
 								<option value="011">011</option>
 								<option value="016">016</option>
@@ -154,8 +161,8 @@
 								<option value="018">018</option>
 								<option value="019">019</option>
 							</select>
-							<input id="celphone_no2" name="celphone_no2" type="text" value="${phone1}" size="5px"> -
-							<input id="celphone_no3" name="celphone_no3" type="text" value="${phone2 }" size="5px">
+							<input id="phone1" name="phone1" type="text" value="${phone1}" size="5px"> -
+							<input id="phone2" name="phone2" type="text" value="${phone2}" size="5px">
 					</div>
 					<div class="row">
 						<label>E-Mail</label>
@@ -204,6 +211,8 @@
 
 	<script type="text/javascript">
 		var member_pwd = ${memberInfo.member_pwd};
+
+		
 		$(function() {
 			$("#memberModify").hide();
 			
@@ -218,16 +227,29 @@
 					$("#memberPwd").val('');
 				}
 			});
-			
+		});
+		
+		$(function() {
+
+
 			$("#modiCancel").on('click', function(){
 				if(confirm("수정안해?")){
 					location.href = "/main/main";
 				}
 			});
-			
+			var formObj = $("form[role='form']");
 			$("#modiOk").on('click', function(){
-				if(confirm("수정 다 했어?")){
-					alert("수정되었습니다");
+				var member_email = $("#email1").val()+"@"+$("#email2").val();
+				var member_phone = $("#phone0").val()+"-"+$("#phone1").val()+"-"+$("#phone2").val();
+				var member_ssn = $("#ssn_y").val()+"-"+$("#ssn_m").val()+"-"+$("#ssn_d").val();
+				if(confirm("  **수정 내용이 맞나요?**\n"
+							+"회원 이메일 : "+member_email+"\n"
+							+"회원 폰번 : "+member_phone+"\n"
+							+"회원 생년월일 : "+member_ssn)){
+					$("#member_phone").val(member_phone);
+					$("#member_email").val(member_email);
+					$("#member_ssn").val(member_ssn);
+					formObj.submit();
 				}
 			});
 		});

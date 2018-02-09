@@ -39,4 +39,9 @@ public class MypagesServiceImpl implements MypagesService {
 	public MemberVO memberInfo(int member_id) throws Exception {
 		return dao.memberInfo(member_id);
 	}
+
+	@Override
+	public void memberModify(MemberVO vo) throws Exception {
+		dao.memberUpdate(vo);
+	}
 }

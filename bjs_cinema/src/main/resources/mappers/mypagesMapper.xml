@@ -36,6 +36,11 @@
 		select * from member where member_id = #{member_id}	
 	</select>
 	
+	<update id="memberUpdate" parameterType="MemberVO">
+		update member set member_ssn = #{member_ssn}, member_phone = #{member_phone},
+			member_email = #{member_email} where member_id = #{member_id}
+	</update>
+	
 </mapper>
 
 

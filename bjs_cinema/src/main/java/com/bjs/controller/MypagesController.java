@@ -76,4 +76,12 @@ public class MypagesController {
 		model.addAttribute("email2", email1[1]);		
 		
 	}
+	
+	//회원정보 수정
+	@RequestMapping(value="memberModify", method=RequestMethod.POST)
+	public String memberModify(MemberVO vo) throws Exception {
+		mpService.memberModify(vo);
+		
+		return "redirect:/main/main";
+	}
 }

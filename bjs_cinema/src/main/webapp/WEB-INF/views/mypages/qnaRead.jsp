@@ -23,7 +23,7 @@
 	media="screen" data-name="skins">
 <link rel="stylesheet" href="/resources/css/layout/wide.css"
 	data-name="layout">
-<link rel="icon" href="/resources/img/gold.jpg">
+<link rel="icon" href="/resources/img/B.PNG">
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/switcher.css" media="screen" />
 <style type="text/css">

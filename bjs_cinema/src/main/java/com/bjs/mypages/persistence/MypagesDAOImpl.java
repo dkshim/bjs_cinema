@@ -42,4 +42,9 @@ public class MypagesDAOImpl implements MypagesDAO {
 		return session.selectOne(namespace+".memberInfo", member_id);
 	}
 
+	@Override
+	public void memberUpdate(MemberVO vo) throws Exception {
+		session.update(namespace+".memberUpdate", vo);
+	}
+
 }
