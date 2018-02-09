@@ -1,6 +1,7 @@
 package com.bjs.cinema.persistence;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -29,8 +30,18 @@ public class CinemaDAOImpl implements CinemaDAO {
 		return session.selectList(namespace+".cinemaList");
 	}
 	
-	@Override
+/*	@Override
 	public List<CinemaVO> cinemaTotal()throws Exception{
 		return session.selectList(namespace+".cinemaTotal");
+	}*/
+	
+	@Override
+	public List<Map<String, Integer>> cinemaTotal() throws Exception{
+		return session.selectList(namespace+".cinemaTotal");
+	}
+	
+	@Override
+	public List<CinemaVO> cinemaCount() throws Exception{
+		return session.selectList(namespace+".cinemaCount");
 	}
 }

@@ -19,13 +19,16 @@
 		order by cinema_id DESC
 	</select>
 	
-	<select id="cinemaTotal" resultType="CinemaVO">
+<!-- 	<select id="cinemaTotal" resultType="map">
 		<![CDATA[
-		select CINEMA_REGION from cinema
+		select CINEMA_REGION, count(*) from cinema
 		group by CINEMA_REGION
 		]]>
-	</select>
+	</select> -->
 	
+	<select id="cinemaCount" resultType="map">
+		select * from cinematotal
+	</select>
 
 	
 </mapper>

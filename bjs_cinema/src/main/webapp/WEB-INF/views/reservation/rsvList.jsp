@@ -529,11 +529,13 @@ h3 {
 									<li class="tab-link current" data-tab="tab-1">예매율순</li>
 									<li class="tab-link" data-tab="tab-2">가나다순</li>
 								</ul>
+								<div class="select-theater" id="select-theater">
 								<ul class="select-theater">
-									<c:forEach items="${cinemaTotal}" var="list">
+									<%-- <c:forEach items="${cinemaTotal}" var="list">
 										<li><a href="#">${list.cinema_region }</a></li>
-									</c:forEach>
+									</c:forEach> --%>
 								</ul>
+								</div>
 							</div>
 						</div>
 						<div id="tab-2" class="tab-content"></div>
@@ -707,14 +709,42 @@ $(document).ready(function(){
 			dataType : "json",
 			data : obj,
 			success : function(data){
-				
-				console.log("씨빨!!!");
 			}
+		
 		})
 	})
 	
+	
+  	$(window).load(function(){
+		
+		$.ajax({
+			type : "POST",
+			url : "/reservation/theaterList",
+			dataType : "json",
+			timeout : 10000,
+			success : function(data){
+					console.log(data);
+					var html = "";
+					
+					$('#select-theater').empty();
+					html += "<div>";
+					for(var i=1; i<=8; i++){
+						html += data
+						if(i>0){
+							html += " \ </ul>"
+						} else {
+							html += " \ </ul>"
+						}
+					}
+					
+					html +="</div>";
+					$('#select-theater').append(html);
+			}
+ 		})
+	})
 
 </script>
+
 			<!-- Start Style Switcher -->
 			<div class="switcher"></div>
 			<!-- End Style Switcher -->
