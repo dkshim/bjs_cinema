@@ -3,6 +3,8 @@ package com.bjs.controller;
 
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -21,8 +23,7 @@ import com.bjs.member.service.MemberService;
 
 
 @Controller
-//모든 맵핑은 /member/를 상속
-@RequestMapping("/main/*")
+@RequestMapping("/main")
 public class MemberController {
 	//로깅을 위한 변수
 	/*private static final Logger logger = LoggerFactory.getLogger(MemberController.class);*/
@@ -30,7 +31,7 @@ public class MemberController {
 	@Inject
 	private MemberService memberService;
 	
-	/*@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public void loginGET(@ModelAttribute("dto") LoginDTO dto){
 		
 	}
@@ -40,28 +41,26 @@ public class MemberController {
 		
 		System.out.println(dto.getMember_identify());
 		System.out.println(dto.getMember_pwd());
-		
-		session.setAttribute("member_identify", dto.getMember_identify());
-		
-		
 
-		if( memberService.login(dto.getMember_identify())==null){
+		MemberVO vo = memberService.login(dto);
+		
+		if( vo == null){
 			System.out.println("좋은말 할때 로그인해라.");
 			return;
 		}
 		
-		model.addAttribute("memberVO", memberService.login(dto.getMember_identify()));
+		model.addAttribute("memberVO", vo);
 		
-	}*/
+	}
 	
 	
 	
 	//  1) 로그인 화면.
-	@RequestMapping("login")
+	/*@RequestMapping("login")
 	public String login(){
 		return "main/login";
 		
-	}
+	}*/
 	
 	//  2) 로그인 처리
 	@RequestMapping("loginCheck")
@@ -80,13 +79,17 @@ public class MemberController {
 	}
 	
 	// 3) 로그아웃 처리
-	@RequestMapping("logout")
-	public ModelAndView logout(HttpSession session){
-		memberService.logout(session);
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main/login");
-		mav.addObject("msg", "logout");
-		return mav;
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception{
+		Object obj = session.getAttribute("login");
+		
+		if(obj != null){
+			MemberVO vo = (MemberVO) obj;
+			
+			session.removeAttribute("login");
+			session.invalidate();
+		}
+		return "main/logout";
 	}
 	
 	//4-1  회원 가입[GET 방식]
@@ -96,11 +99,12 @@ public class MemberController {
 	}
 	
 	//4-2  회원 가입[post 방식]
-	@RequestMapping(value="/main/memberRegister", method=RequestMethod.POST)
+	@RequestMapping(value="/memberRegister", method=RequestMethod.POST)
 	public String registPOST(MemberVO member, RedirectAttributes rttr)throws Exception{
 		memberService.regist(member);
 		System.out.println("register post.........");
+		System.out.println(member);
 		rttr.addFlashAttribute("msg", "success");
-		return "redirect:/main/main";
+		return "redirect:/main/memberSuccess";
 	}
 }

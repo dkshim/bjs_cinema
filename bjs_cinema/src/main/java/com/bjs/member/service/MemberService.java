@@ -20,6 +20,6 @@ public interface MemberService {
 	public void regist(MemberVO member)throws Exception;
 	
 	//로그인 처리
-	//public MemberVO login(String member_identify) throws Exception;
+	public MemberVO login(LoginDTO dto) throws Exception;
 	
 }

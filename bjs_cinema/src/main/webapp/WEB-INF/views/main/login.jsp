@@ -34,22 +34,22 @@
     <script>
     	$(document).ready(function(){
     		$("#btnLogin").click(function(){
+    			//입력한 값들
     			var member_identify = $("#member_identify").val();
     			var member_pwd = $("#member_pwd").val();
     			
     			if(member_identify==""){
     				alert("아이디를 입력해주세요.");
     				$("#member_identify").focus();
-    				return;  //함수 종료
+    				return; 
     			}
     			if(member_pwd==""){
     				alert("비밀번호를 입력해주세요.");
     				$("#member_pwd").focus();
     				return; 
     			}
-    			//폼 내부의 데이터를 전송할 주소
+    			
     			document.form1.action="/main/loginCheck";
-    			//제출
     			document.form1.submit();
 
     		});
@@ -87,20 +87,11 @@
             <div id="output"></div>
             <div class="avatar"></div>
             <div class="form-box">
-                <form name="form1" method="post">
+                <form action="/main/loginPost" method="post" >
                     <input name="member_identify" type="text" placeholder="아이디를 입력해주세요.">
                     <input name="member_pwd" type="password" placeholder="password">
-                    <button class="btn btn-info btn-block login" type="button" id="btnLogin">Login</button>        
-                    <c:if test="${msg == 'failure'}">
-                    	<div style="color: red">
-                    		아이디 또는 비밀번호가 일치하지 않습니다.
-                    	</div>
-                    </c:if>
-                    <c:if test="${msg=='logout'}">
-                    	<div style="color:blue">
-                    		로그아웃 처리 되었습니다.
-                    	</div>
-                    </c:if>
+                    <button class="btn btn-info btn-block login" type="submit" id="btnLogin">Login</button>        
+
                 </form>
             </div>
         </div>

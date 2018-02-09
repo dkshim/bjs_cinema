@@ -16,6 +16,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView mav )throws Exception{
 		
 		HttpSession session = request.getSession();
+		//modelMap에 model객체가지고 온다.
 		ModelMap modelMap = mav.getModelMap();
 		Object memberVO = modelMap.get("memberVO");
 		

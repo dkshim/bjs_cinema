@@ -46,10 +46,10 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	//로그인 처리
-	/*@Override
-	public MemberVO login(String member_identify, String member_pwd) throws Exception {
-		// TODO Auto-generated method stub
-		return return session.selectOne(namespace+".login", member_identify);
-	}*/
+	@Override
+	public MemberVO login(LoginDTO dto) throws Exception {
+		
+		return session.selectOne(namespace+".login", dto);
+	}
 
 }

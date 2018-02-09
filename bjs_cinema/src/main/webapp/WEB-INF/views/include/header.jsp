@@ -2,15 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <% 
-/*  	String cur_id = "-1";
+ 	String cur_id = "-1";
 	
 	if(session.getAttribute("member_identify") != null){
 		cur_id = (String)session.getAttribute("member_identify")+"";
 		
 	}
 	
-	int person_id = Integer.parseInt(cur_id);
-	request.setAttribute("member_identify", person_id); */
+	int member_identify = Integer.parseInt(cur_id);
+	request.setAttribute("member_identify", member_identify); 
 			 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -68,13 +68,14 @@
 	
 	function fn_login(){
 		window.open("/person/login","","width=400,height=300,left=550,top=200");
-	}
+	}--%>
 	
+	<script>
 	function fn_logout(){
-		location.href="/person/logout";
+		location.href="/main/logout";
 	}
 	
-</script> --%>
+</script> 
 <!-- <script type="text/javascript">
 //sidebar 관련 script
 	$(function(){
@@ -263,7 +264,7 @@
                     <div  class="col-lg-3 col-sm-3 ">
                         <div id="logo">
 	                        <c:choose>
-	                        	<c:when test="${(person_id == 1) || (person_id == -1)}">
+	                        	<c:when test="${(member_identify == 1) || (member_identify == -1)}">
                         			<h1><a href="/main/main"><img src="/resources/img/BJSlogo.PNG"></a></h1>
                         		</c:when>
                         		<c:otherwise>
@@ -294,7 +295,7 @@
 								</c:if>	
 								<c:if test="${member_identify == null }">
 									<li>
-										<a href="#" onclick="fn_login()">My BJS | </a>
+										<a href="/mypages/qnaRegist" onclick="fn_login()">My BJS | </a>
 									</li>
 								</c:if>	
 								<c:if test="${member_identify == null }">
@@ -308,10 +309,7 @@
 							<div style="margin-left: 80px;">
 						
 								<c:if test="${member_identify != null }">
-									<span> ${sessionScope.member_name} 님 로그인중 
-										<a href="#" onclick="fn_newAlarm()">새로온 알림  [ </a> 
-										<a href="#" id="alarm_new"></a> 
-										<a href="#"> ]</a> 
+									<span> ${login.member_name} 님 반갑습니다 :) 
 										<a href="/main/logout" onclick="fn_logout()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 로그아웃</a>
 									</span> 
 									<form action="/alarmUpdate" method="post" name="alarmUpdate"></form>
@@ -330,7 +328,7 @@
                             <div class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
                                 	<c:choose>
-                                		<c:when test="${(person_id == 1) || (person_id == '-1')}">
+                                		<c:when test="${(member_identify == 1) || (member_identify == '-1')}">
 	                        		 		<li><a href="/main/main">Home</a></li>
 	                        			</c:when>
 			                        	<c:otherwise>
@@ -383,7 +381,7 @@
 	                                        </ul>
 	                                    </li>
                                     </c:if>
-                                    <c:if test="${person_email != null }">
+                                    <c:if test="${member_identify != null }">
 	                                    <li><a href="/mypage/mileageList" >마이페이지</a>
 	                                        <ul class="dropdown-menu">
 	                                        	<li><a href="/mypage/mileageList">마일리지</a></li>

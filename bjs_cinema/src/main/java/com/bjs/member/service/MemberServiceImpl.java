@@ -52,10 +52,10 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	//로그인 처리
-	/*@Override
-	public MemberVO login(String member_identify) throws Exception {
+	@Override
+	public MemberVO login(LoginDTO dto) throws Exception {
 		
-		return memberDao.login(member_identify);
-	}*/
+		return memberDao.login(dto);
+	}
 
 }

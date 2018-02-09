@@ -32,9 +32,8 @@
   `		.button1{
   			margin-left: 100px;
  		}
-    		 
-    
     </style>
+    
 </head>
 <body>
 	<!-- 헤더 -->
@@ -58,84 +57,10 @@
 					</div>
 				</div>
 			</div>
-		</section>
-		
-
-	<%-- <form role="form" method="POST" name="writeform">
-	<table class="table table-bordered table-hover" style="text-align: center; border: 1px solid #dddddd">
-	
-		<div class="box-body">
-	
-		<br><br>
-		<div class="form-group" 
-				style="border: 1px solid #48BAE4; height: auto; width: 60%; margin: auto;">
-				<label for="exampleInputEmail1">
-				<img src="/resources/img/BJSlogo.PNG" width="100%" align="center"></label>
-		</div>
-			
-		<div class="form-group" style="border: 1px solid #48BAE4; height: auto; width: 60%; margin: auto; color: green; font-weight: bold; font-size: 1.0em;"
-			align="center">
-			<label for="exampleInputEmail1">여행일수</label><br>
-			
-						<select name="sh_subject" style="font-family: 굴림체; text-align-last: center; size: 100px">
-							<option value="  ">여행기간 선택</option>
-								<option value="[5일]">[5일]</option>
-								<option value="[7일]">[7일]</option>
-							</select>
-							<br><br>
-		</div>
-
-		<div class="form-group" style="border: 1px solid #48BAE4; height: auto; width: 60%; margin: auto; color: green; font-weight: bold; font-size: 1.0em;"
-			align="center">
-			<br>
-			<label for="exampleInputEmail1">제목</label> 
-			<input type="text"
-				name='sh_title' class="form-control" placeholder="제목을 입력해주세요."><br><br>
-		</div>
-		<div class="form-group" style="border: 1px solid #48BAE4; height: auto; width: 60%; margin: auto; color: green; font-weight: bold; font-size: 1.0em;"
-			align="center">
-			<br>
-			<label for="exampleInputEmail1">코스</label> <br>
-			<input type="hidden" name="c_id" value="${courseDetailList.get(0).c_id}">
-			
-			<select id="course" name="c_id" onchange="selectCourse();" style="size: 100px;">
-				<option selected="selected">원하는 코스를 선택 하세요</option>
-				<c:forEach var="CourseObject" items="${courseList }">
-					<option value="${CourseObject.c_id}">${CourseObject.c_name}</option>
-				</c:forEach>			
-			</select><br><br>
-			<ul class="form-control" id="selectCourse" rows="3" placeholder="코스를 입력해주세요.">
-			
-			</ul>
-		</div>
-		<div class="form-group" style="border: 1px solid #48BAE4; height: auto; width: 60%; margin: auto; color: green; font-weight: bold; font-size: 1.0em;"
-			align="center">
-			<br><label for="exampleInputPassword1">내용</label><br>
-			<textarea class="form-control" name="sh_content" rows="3"
-				placeholder="내용을 입력해주세요." style="border: 1px solid #48BAE4; height: 30%; width: 100%; margin: auto; color: green; resize: none; font-weight: bold; font-size: 1.0em;"
-			align="center"></textarea>
-		</div>
-		<div class="form-group" style="border: 1px solid #48BAE4; height: auto; width: 60%; margin: auto; color: green; font-weight: bold; font-size: 1.0em;"
-			align="center">
-			<label for="exampleInputEmail1">아이디</label> 
-			<input type="text"
-				name="m_id" class="form-control" value='${login.m_id }' readonly>
-		</div>
-		<div class="form-group" style="border: 1px solid #48BAE4; height: auto; width: 60%; margin: auto; color: green; font-weight: bold; font-size: 1.0em;"
-			align="center">
-			<label for="exampleInputEmail1">비밀번호</label> 
-			<input type="text"
-				name="sh_pw" class="form-control" placeholder="비밀번호를 입력해주세요.">
-		</div>
-		
-		
-	</div>
-	<!-- /.box-body -->
-
-	</table> --%>
+		</section> 
 
 	<div class="container">
-		<form method="POST" action="/main/memberRegist">
+		<form role="form" method="post">
 			<table class="table table-bordered table-hover" style="text-align: center; border:1px solid #dddddd">
 			<thead>
 				<tr>
@@ -145,39 +70,39 @@
 			<tbody>
 				<tr>
 					<td style="width : 110px;"><h5>아이디(*)</h5>
-					<td><input class="form-control" type="text" id="member_identify" name="member_identify" maxLength="30"></td>
+					<td><input class="form-control" type="text" id="member_identify" name="member_identify" placeholder="User Id" ></td>
 					<td style="width:110px;"><button class="btn btn-default" onclick="registerCheckFunction()" type="button">중복체크</button>
 					</td>
 				</tr> 
 				<tr>
 					<td style="width : 110px;"><h5>비밀번호 </h5></td>
 					<td colspan="2">
-					<input class="form-control" type="password" id="member_pwd" name="member_pwd" maxLength="30"></td> 
+					<input class="form-control" type="password" id="member_pwd" name="member_pwd" placeholder="PassWord"></td> 
 				</tr>
-				<tr>
+				<!-- <tr>
 					<td style="width : 110px;"><h5>비밀번호 확인</h5></td>
 					<td colspan="2">
-					<input class="form-control" type="password" id="member_pwd" name="member_pwd" maxLength="30"></td>
-				</tr>
+					<input class="form-control" type="password" id="member_pwd2" name="member_pwd2" maxLength="30"></td>
+				</tr> -->
 				<tr>
 					<td style="width : 110px;"><h5>이름</h5></td>
 					<td colspan="2">
-					<input class="form-control" type="text" id="member_name" name="member_name" maxLength="30"></td>
+					<input class="form-control" type="text" id="member_name" name="member_name" placeholder="Name"></td>
 				</tr>
 				<tr>
 					<td style="width : 110px;"><h5>이메일</h5></td>
 					<td colspan="2">
-					<input class="form-control" type="text" id="member_email" name="member_email" maxLength="30"></td>
+					<input class="form-control" type="text" id="member_email" name="member_email" placeholder="E-mail"></td>
 				</tr>
 				 <tr>
 					<td style="width : 110px;"><h5>생년월일</h5></td>
 					<td colspan="2">
-					<input class="form-control" type="text" id="member_ssn" name="member_ssn" ></td>
+					<input class="form-control" type="text" id="member_ssn" name="member_ssn" placeholder="ex)  2018-01-01"></td>
 				</tr>
 				<tr>
 					<td style="width : 110px;"><h5>핸드폰번호</h5></td>
 					<td colspan="2">
-					<input class="form-control" type="text" id="member_name" name="member_name" maxLength="30"></td>
+					<input class="form-control" type="text" id="member_phone" name="member_phone" placeholder="ex)  010-1234-5678"></td>
 				</tr>
 				<tr>
 					<td style="width : 110px;"><h5>성별</h5></td>
@@ -186,7 +111,7 @@
 							<div class="btn-group" data-toggle="buttons">
 							
 							<label class="btn btn-primary active">
-								<input type="radio" name="member_gender" autocomplete="off" value="M" checked>남자
+								<input type="radio" name="member_gender" autocomplete="off" value="M">남자
 							</label>
 							<label class="btn btn-primary">
 								<input type="radio" name="member_gender", autocomplete="off" value="F"> 여자

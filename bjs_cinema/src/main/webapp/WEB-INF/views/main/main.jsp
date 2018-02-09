@@ -31,9 +31,9 @@
     <script>
     
     var result = '${msg}';
-    if(result=='SUCCESS'){
-    	alert("회원가입이 성공적으로 완료되었습니다. :)");
-    }
+   		 if(result=='SUCCESS'){
+    			alert("회원가입이 성공적으로 완료되었습니다. :)");
+    		}
     
     </script>
 </head>
@@ -111,7 +111,7 @@
             
         </div>
     </div>
-    <div class="grey_bg">
+    <!-- <div class="grey_bg">
         <div class="container">
             <div class="row sub_content">
                 <div class="col-sm-4">
@@ -266,9 +266,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <div class="grey-content">
+  <!--   <div class="grey-content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-5 col-md-offset-1 super_sub_content clearfix same-height">
@@ -372,7 +372,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="super_sub_content grey_bg">
         <div class="container">
@@ -382,9 +382,9 @@
                         <div class="service-icon">
                             <i class="fa fa-headphones"></i>
                         </div>
-                        <h3>SEO Ready</h3>
+                        <h3>상영예정작</h3>
                         <p>
-                            Drag more traffic to your website with our SEO Friendly theme: simply bank...
+                         
                         </p>
                     </div>
 
@@ -392,7 +392,7 @@
                         <div class="service-icon">
                             <i class="fa fa-tasks"></i>
                         </div>
-                        <h3>Retina Ready</h3>
+                        <h3>영화예매순위</h3>
                         <p>
                             All our themes come with extensive HTML Documentation that teaches you how...
                         </p>
@@ -400,7 +400,7 @@
                 </div>
 
                 <div class="col-sm-4">
-                    <img src="images/phones.png" class="img-responsive center-block">
+                    <img src="resources/img/7.png" class="img-responsive center-block">
                 </div>
 
                 <div class="col-sm-4 mrgt-70">
