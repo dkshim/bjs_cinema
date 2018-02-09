@@ -337,6 +337,9 @@ input, select, img {
     <link rel="stylesheet" href="/resources/css/style.css">
     <link rel="stylesheet" type="/resources/text/css" href="/resources/css/style.css" media="screen" data-name="skins">
     <link rel="stylesheet" href="/resources/css/layout/wide.css" data-name="layout">
+    <link rel="icon" href="/resources/img/B.PNG">
+    
+    
 
     <link rel="stylesheet" type="/resources/text/css" href="/resources/css/switcher.css" media="screen" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -347,160 +350,11 @@ input, select, img {
     <![endif]-->
 </head>
 <body>
-<!--Start Header-->
-    <header id="header">
-        <div id="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 top-info hidden-xs">
-                        <span><i class="fa fa-phone"></i>Phone: (123) 456-7890</span>
-                        <span><i class="fa fa-envelope"></i>Email: mail@example.com</span>
-                    </div>
-                    <div class="col-sm-4 top-info">
-                        <ul>
-                            <li><a href="" class="my-tweet"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="" class="my-facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="" class="my-skype"><i class="fa fa-skype"></i></a></li>
-                            <li><a href="" class="my-pint"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="" class="my-rss"><i class="fa fa-rss"></i></a></li>
-                            <li><a href="" class="my-google"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="logo-bar">
-            <div class="container">
-                <div class="row">
-                    <!-- Logo / Mobile Menu -->
-                    <div  class="col-lg-3 col-sm-3 ">
-                        <div id="logo">
-                           <h1><a href="index.html"><img alt="logo" src="images/logo.png"/></a></h1>
-                        </div>
-                    </div>
-                    <!-- Navigation
-    ================================================== -->
-                    <div class="col-lg-9 col-sm-9">
-                        <div class="navbar navbar-default navbar-static-top" role="navigation">
-                            <!--  <div class="container">-->
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="navbar-collapse collapse">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="#">Home</a>
-                                    <ul class="dropdown-menu">
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index_2.html">Home 2</a></li>
-                                            <li><a href="index_3.html">Home 3</a></li>
-                                            <li><a href="index_4.html">Home 4</a></li>
-                                            <li><a href="index_5.html">Home 5</a></li>
-                                            <li><a href="index_6.html">Home 6</a></li>
-                                            <li><a href="index_7.html">Home 7</a></li>
-                                        </ul>
-                                </li>
 
-                                    <li><a href="#">Shortcodes</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="elements.html">Elements</a></li>
-                                            <li><a href="form-elements.html">Form Elements</a></li>
-                                            <li><a href="columns.html">Columns</a></li>
-                                            <li><a href="typography.html">Typography</a></li>
-                                            <li><a href="pricing-tables.html">Pricing Tables</a></li>
-                                            <li><a href="animation.html">Animation</a></li>
-                                            <li><a href="icons.html">Icons</a></li>
-                                        </ul>
-                                    </li>
+	<!-- 헤더 -->
+	<jsp:include page="/WEB-INF/views/include/header.jsp" />
+	<!-- /헤더 -->
 
-                                    <li><a href="#" >Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="about.html">About</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="about.html">About Us 1</a></li>
-                                                    <li><a href="about-2.html">About Us 2</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="services.html">Services</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="sidebar-right.html">Right Sidebar</a></li>
-                                            <li><a href="sidebar-left.html">Left Sidebar</a></li>
-                                            <li><a href="404-page.html">404 Page</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="active"><a href="#">Portfolio</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="active">
-                                                <a href="#">Portfolio Classic</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="portfolio_2.html">Portfolio 2</a></li>
-                                                    <li class="active"><a href="portfolio_3.html">Portfolio 3</a></li>
-                                                    <li><a href="portfolio_4.html">Portfolio 4</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio_masonry_3.html">Portfolio Masnory</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="portfolio_masonry_2.html">Masonry portfolio 2</a></li>
-                                                    <li><a href="portfolio_masonry_3.html">Masonry portfolio 3</a></li>
-                                                    <li><a href="portfolio_masonry_4.html">Masonry portfolio 4</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li>
-                                                <a href="portfolio_single.html">Portfolio Single</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="portfolio_single.html">Portfolio Single 1</a></li>
-                                                    <li><a href="portfolio_single_2.html">Portfolio Single 2</a></li>
-                                                    <li><a href="portfolio_single_3.html">Portfolio Single 3</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li><a href="#">Blog</a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="portfolio_masonry_3.html">Masnory Blog Style</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="blog-masonry-two.html">Blog Masonry 2</a></li>
-                                                    <li><a href="blog-masonry-three.html">Blog Masonry 3</a></li>
-                                                    <li><a href="blog-masonry-four.html">Blog Masonry 4</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="portfolio_masonry_3.html">Classic Blog Style</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="blog-large-image.html">Large Image</a></li>
-                                                    <li><a href="blog-medium-image.html">Medium Image</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog-post.html">Single Post</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li><a href="#"> <span class="data-hover" data-hover="contact">Contact</span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="contact_1.html">Contact 1</a></li>
-                                            <li><a href="contact_2.html">Contact 2</a></li>
-                                            <li><a href="contact_3.html">Contact 3</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-<!--End Header-->
 	
 	<!--start wrapper-->
 	<section class="wrapper">
@@ -509,7 +363,7 @@ input, select, img {
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="page_title">
-                            <h2>CGV</h2>
+                            <h2>BJS</h2>
                         </div>
                         <nav id="breadcrumbs">
                             <ul>

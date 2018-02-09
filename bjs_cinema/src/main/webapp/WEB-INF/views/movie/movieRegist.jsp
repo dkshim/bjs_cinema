@@ -28,6 +28,8 @@
 
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/switcher.css" media="screen" />
+	
+<link rel="icon" href="/resources/img/B.PNG">	
 
 <style>
 .fileDrop {

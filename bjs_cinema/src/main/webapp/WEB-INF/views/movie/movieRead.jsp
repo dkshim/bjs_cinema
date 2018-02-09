@@ -28,6 +28,7 @@
 
 <link rel="stylesheet" type="text/css"
 	href="/resources/css/switcher.css" media="screen" />
+	<link rel="icon" href="/resources/img/B.PNG">
 
 <style>
 /*  [class|="sect-base"][class$="movie"] .box-contents {
@@ -141,6 +142,27 @@ h3 {
 	<!-- 헤더 -->
 	<jsp:include page="/WEB-INF/views/include/header.jsp" />
 	<!-- /헤더 -->
+	
+	 <section class="page_head">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="page_title">
+                            <h2>CGV</h2>
+                        </div>
+                        <nav id="breadcrumbs">
+                            <ul>
+                                <li><a href="index.html">영화</a>/</li>
+                                <li>무비차트</li> / <li>무비차트</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+	
+	
+	
 
 	<div id="contaniner" class=""><!-- 벽돌 배경이미지 사용 시 class="bg-bricks" 적용 / 배경이미지가 없을 경우 class 삭제  -->
 
