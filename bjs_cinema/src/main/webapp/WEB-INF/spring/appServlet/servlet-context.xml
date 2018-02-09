@@ -21,17 +21,18 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- 로그인 인터셉터 -->
+	<!-- ****** 로그인 인터셉터 ****** -->
 	<beans:bean id="authInterceptor" class="com.bjs.login.interceptor.AuthInterceptor">
 	</beans:bean>
 	<beans:bean id="loginInterceptor" class="com.bjs.login.interceptor.LoginInterceptor">
 	</beans:bean>
-		<interceptors>
-			<interceptor>
-				<mapping path="/main/loginPost"/>
-				<beans:ref bean="loginInterceptor"/>
-			</interceptor>
-		</interceptors>
+	<interceptors>
+		<interceptor>
+			<mapping path="/main/loginPost" />
+			<beans:ref bean="loginInterceptor" />
+		</interceptor>
+	</interceptors>
+	
 	
 	
     <beans:bean id="uploadPath" class="java.lang.String">

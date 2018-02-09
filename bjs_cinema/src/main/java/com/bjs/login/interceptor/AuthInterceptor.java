@@ -30,6 +30,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("login") == null){
+			System.out.println("개자석이 로그인 안함");
 			saveDest(request);
 			response.sendRedirect("/main/login");
 			//가려고 했던 곳으로 못가고 로그인창으로 이동

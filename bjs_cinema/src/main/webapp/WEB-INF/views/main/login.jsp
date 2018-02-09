@@ -31,7 +31,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script>
+   <!--  <script>
     	$(document).ready(function(){
     		$("#btnLogin").click(function(){
     			//입력한 값들
@@ -55,7 +55,7 @@
     		});
     	});
     	
-    </script>
+    </script> -->
 </head>
 <body>
 
@@ -81,22 +81,32 @@
 			</div>
 		</section>
   
-  
-	<div class="container">
-	<div class="login-container">
-            <div id="output"></div>
-            <div class="avatar"></div>
-            <div class="form-box">
-                <form action="/main/loginPost" method="post" >
-                    <input name="member_identify" type="text" placeholder="아이디를 입력해주세요.">
-                    <input name="member_pwd" type="password" placeholder="password">
-                    <button class="btn btn-info btn-block login" type="submit" id="btnLogin">Login</button>        
-
-                </form>
+  <div class="container">
+	<div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Welcome to my site</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="/main/loginPost" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="User ID" name="member_identify" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" name="member_pwd" type="password" value="">
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <button type="submit" class="btn btn-success btn-block">Login</button>
+                            <p>New Member? <a href="signUp.html" class="">Sign up</a></p>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
+    </div>
 </div>
-
 
 
 <!-- 푸터 -->

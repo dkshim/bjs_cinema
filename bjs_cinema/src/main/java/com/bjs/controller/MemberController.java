@@ -1,6 +1,6 @@
 package com.bjs.controller;
 
-
+import java.lang.ProcessBuilder.Redirect;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -39,9 +39,12 @@ public class MemberController {
 	@RequestMapping(value="/loginPost", method=RequestMethod.POST)
 	public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception{
 		
+		System.out.println("loginPostTest......");
 		System.out.println(dto.getMember_identify());
 		System.out.println(dto.getMember_pwd());
-
+		
+		session.setAttribute("id", dto.getMember_identify());
+		
 		MemberVO vo = memberService.login(dto);
 		
 		if( vo == null){
@@ -54,43 +57,23 @@ public class MemberController {
 	}
 	
 	
-	
-	//  1) 로그인 화면.
-	/*@RequestMapping("login")
-	public String login(){
-		return "main/login";
-		
-	}*/
-	
-	//  2) 로그인 처리
-	@RequestMapping("loginCheck")
-	public ModelAndView loginCheck(@ModelAttribute MemberVO vo, HttpSession session){
-		boolean result = memberService.loginCheck(vo, session);
-		ModelAndView mav = new ModelAndView();
-		// 로그인 성공
-		if(result == true){
-			mav.setViewName("main");
-			mav.addObject("msg", "success");
-		}else{
-			mav.setViewName("main/login");
-			mav.addObject("msg", "failure");
-		}
-		return mav;
-	}
-	
 	// 3) 로그아웃 처리
 	@RequestMapping(value="/logout", method=RequestMethod.GET)
-	public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception{
+	public String logout(HttpServletRequest request, HttpServletResponse response ,HttpSession session) throws Exception{
+		System.out.println("로그아웃이 되어라!!!!");
+		
 		Object obj = session.getAttribute("login");
 		
 		if(obj != null){
-			MemberVO vo = (MemberVO) obj;
+		MemberVO vo = (MemberVO) obj;	
 			
 			session.removeAttribute("login");
 			session.invalidate();
 		}
-		return "main/logout";
-	}
+			return "redirect:/";
+		}
+	
+	
 	
 	//4-1  회원 가입[GET 방식]
 	@RequestMapping(value="/memberRegister" , method= RequestMethod.GET)

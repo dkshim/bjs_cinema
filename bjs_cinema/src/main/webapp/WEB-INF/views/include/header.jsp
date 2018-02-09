@@ -1,28 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<% 
+<%-- <% 
  	String cur_id = "-1";
 	
-	if(session.getAttribute("member_identify") != null){
-		cur_id = (String)session.getAttribute("member_identify")+"";
+	if(session.getAttribute("member_id") != null){
+		cur_id = (String)session.getAttribute("member_id")+"";
 		
 	}
 	
-	int member_identify = Integer.parseInt(cur_id);
-	request.setAttribute("member_identify", member_identify); 
+	int member_id = Integer.parseInt(cur_id);
+	request.setAttribute("member_id", member_id); 
 			 
-%>
+%> --%>
+
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<%-- <script
+<!-- <script
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-  
+  crossorigin="anonymous"></script> -->
+  <%-- 
 <script type="text/javascript">
 
 	$(function(){
@@ -210,7 +212,7 @@
 
 </head>
 <body >
-	<c:if test="${person_email != null }">
+	<c:if test="${member_identify != null }">
     	<div id="STATICMENU" class="col-sm-1">
     		<div class="sidebar">
 				<div class="widget widget_tab">
@@ -283,22 +285,22 @@
                             
                             <div style="margin-left: 100px; font-size: small;">
         						<ul class="memberAdmin">
-        						<c:if test="${member_identify == null }">
+        						<c:if test="${empty login }">
         							<li>
-										<a href="/main/login" onclick="fn_login()">로그인 | </a>
+										<a href="/main/login">로그인 | </a>
 									</li>
 								</c:if>	
-								<c:if test="${member_identify == null }">
+								<c:if test="${empty login }">
 									<li>
 										<a href="/main/memberRegister" onclick="fn_login()">회원가입 | </a>
 									</li>
 								</c:if>	
-								<c:if test="${member_identify == null }">
+								<c:if test="${empty login}">
 									<li>
 										<a href="/mypages/qnaRegist" onclick="fn_login()">My BJS | </a>
 									</li>
 								</c:if>	
-								<c:if test="${member_identify == null }">
+								<c:if test="${empty login}">
 									<li>
 										<a href="#" onclick="fn_login()">고객센터</a>
 									</li>
@@ -308,11 +310,11 @@
 							
 							<div style="margin-left: 80px;">
 						
-								<c:if test="${member_identify != null }">
+								<c:if test="${not empty login}">
 									<span> ${login.member_name} 님 반갑습니다 :) 
-										<a href="/main/logout" onclick="fn_logout()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 로그아웃</a>
+										<a href="#" onclick="fn_logout()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 로그아웃</a>
 									</span> 
-									<form action="/alarmUpdate" method="post" name="alarmUpdate"></form>
+									
 								</c:if>
 							
 							</div>

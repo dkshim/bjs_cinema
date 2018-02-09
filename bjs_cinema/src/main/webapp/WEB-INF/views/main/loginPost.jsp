@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%-- <%	
+	HttpSession sessionValue = request.getSession();
+	Object login = sessionValue.getAttribute("login");
+	if(login != null){
+		response.sendRedirect("/");
+	}else{
+		response.sendRedirect("/main/login");
+	}
+%>    --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +17,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-		self.location="/main/main";
+	
 	</script>
 </body>
 </html>
