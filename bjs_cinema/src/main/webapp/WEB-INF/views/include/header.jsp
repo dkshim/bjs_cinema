@@ -297,7 +297,7 @@
 								</c:if>	
 								<c:if test="${empty login}">
 									<li>
-										<a href="/mypages/qnaRegist" onclick="fn_login()">My BJS | </a>
+										<a href="/mypages/qnaMyList" onclick="fn_login()">My BJS | </a>
 									</li>
 								</c:if>	
 								<c:if test="${empty login}">
@@ -384,26 +384,15 @@
                                             <li><a href="/community/qna">자주묻는질문</a></li>
                                         </ul>
                                     </li>
-                                    
-                                    <c:if test="${person_email == null }">
-	                                    <li class="hidden"><a href="/mypage/mileageList" >마이페이지</a>
-	                                        <ul class="dropdown-menu">
-	                                        	<li><a href="/mypage/mileageList">마일리지</a></li>
-	                                        	<li><a href="/mypage/pickList">찜 리스트</a></li>
-	                                        	<li><a href="/mypage/buyList">구매내역</a></li>
-	                                        	<li><a href="/mypage/sellList">판매내역</a></li>
-	                                        	<li><a href="/mypage/messageBox">쪽지보관함</a></li>
-	                                        </ul>
-	                                    </li>
-                                    </c:if>
+
                                     <c:if test="${not empty login  }">
-	                                    <li><a href="/mypage/mileageList" >마이페이지</a>
+	                                    <li><a href="/mypages/memberInfo" >마이페이지</a>
 	                                        <ul class="dropdown-menu">
-	                                        	<li><a href="/mypage/mileageList">마일리지</a></li>
-	                                        	<li><a href="/mypage/pickList">찜 리스트</a></li>
-	                                        	<li><a href="/mypage/buyList">구매내역</a></li>
-	                                        	<li><a href="/mypage/sellList">판매내역</a></li>
-	                                        	<li><a href="/mypage/messageBox">쪽지보관함</a></li>
+	                                        	<li><a href="#">예매내역</a></li>
+	                                        	<li><a href="#">적립금내역</a></li>
+	                                        	<li><a href="/mypages/memberInfo">회원정보</a></li>
+	                                        	<li><a href="/mypages/qnaMyList">문의내역</a></li>
+	                                        	<li><a href="#">내가 본영화</a></li>
 	                                        </ul>
 	                                    </li>
                                     </c:if>

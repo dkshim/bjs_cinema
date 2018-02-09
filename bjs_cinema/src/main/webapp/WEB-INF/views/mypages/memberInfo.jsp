@@ -105,7 +105,7 @@
 							<span>회원 정보 변경</span>
 						</h4>
 					</div>
-					
+					<button type="button" id="kindChange" class="btn btn-default btn-lg button">회원탈퇴</button>
 					<div class="row">
 						<label>이름</label>
 						<label>${memberInfo.member_name }</label>
@@ -130,6 +130,9 @@
 						</c:if>
 						<c:if test="${memberInfo.member_kind=='N' }">
 							<label>일반<img src="/resources/img/nomalImg.jpg"></label>
+						</c:if>
+						<c:if test="${memberInfo.member_kind=='R' }">
+							<label>탈퇴회원</label>
 						</c:if>
 					</div>
 					<div class="row">
@@ -171,7 +174,7 @@
 					</div>
 					<div class="form-group">
 						<button type="reset" id="modiCancel" class="btn btn-warning btn-lg button">취소</button>
-						<button type="submit" id="modiOk" class="btn btn-primary btn-lg button">수정완료</button>
+						<button type="submit" id="modiOk" class="btn btn-primary btn-lg button">수정완료</button>						
 					</div>
 				</div>
 			</div>
@@ -230,6 +233,7 @@
 		});
 		
 		$(function() {
+			
 
 
 			$("#modiCancel").on('click', function(){
@@ -249,6 +253,16 @@
 					$("#member_phone").val(member_phone);
 					$("#member_email").val(member_email);
 					$("#member_ssn").val(member_ssn);
+					formObj.attr("action", "/mypages/memberModify");
+					formObj.attr("method", "post");
+					formObj.submit();
+				}
+			});
+			
+			$("#kindChange").on('click', function() {
+				if(confirm("진짜 탈퇴할거야?")) {
+					formObj.attr("action", "/mypages/memberKindModify");
+					formObj.attr("method", "post");
 					formObj.submit();
 				}
 			});

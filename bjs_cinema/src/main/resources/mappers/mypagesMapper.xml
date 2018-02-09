@@ -41,6 +41,9 @@
 			member_email = #{member_email} where member_id = #{member_id}
 	</update>
 	
+	<update id="memberKindUpdate" parameterType="MemberVO">
+		update member set member_kind = 'R' where member_id = #{member_id}		
+	</update>
 </mapper>
 
 

@@ -3,9 +3,12 @@ package com.bjs.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,10 +40,11 @@ public class MypagesController {
 
 	// qna MyList(문의내역 출력)
 	@RequestMapping(value = "qnaMyList", method = RequestMethod.GET)
-	public String qnaMyList(Model model) throws Exception {
-		QnaVO vo = new QnaVO();
-		int member_id = 2;
-		model.addAttribute("qnaMyList", mpService.qnaMyList(member_id));
+	public String qnaMyList(Model model, HttpServletRequest request) throws Exception {
+		HttpSession session = request.getSession();
+		MemberVO vo = (MemberVO) session.getAttribute("login");
+		
+		model.addAttribute("qnaMyList", mpService.qnaMyList(vo.getMember_id()));
 		return "/mypages/qnaList";
 	}
 
@@ -53,8 +57,10 @@ public class MypagesController {
 
 	//내 회원정보보기
 	@RequestMapping(value="memberInfo", method=RequestMethod.GET)
-	public void memberInfo(Model model) throws Exception {
-		int member_id = 4;
+	public String memberInfo(Model model, HttpServletRequest request) throws Exception {
+		HttpSession session = request.getSession();
+		MemberVO vo = (MemberVO) session.getAttribute("login");
+		int member_id = vo.getMember_id();
 		String phone = mpService.memberInfo(member_id).getMember_phone();
 		String ssn = mpService.memberInfo(member_id).getMember_ssn();
 		String email = mpService.memberInfo(member_id).getMember_email();
@@ -74,13 +80,20 @@ public class MypagesController {
 		String email1[] = email.split("@");
 		model.addAttribute("email1", email1[0]);
 		model.addAttribute("email2", email1[1]);		
-		
+		return "/mypages/memberInfo";
 	}
 	
 	//회원정보 수정
 	@RequestMapping(value="memberModify", method=RequestMethod.POST)
 	public String memberModify(MemberVO vo) throws Exception {
 		mpService.memberModify(vo);
+		
+		return "/main/main";
+	}
+	
+	@RequestMapping(value="memberKindModify", method=RequestMethod.POST)
+	public String memberKindModify(MemberVO vo) throws Exception {
+		mpService.memberKindModify(vo);
 		
 		return "redirect:/main/main";
 	}

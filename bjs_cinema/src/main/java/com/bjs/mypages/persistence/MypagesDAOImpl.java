@@ -47,4 +47,9 @@ public class MypagesDAOImpl implements MypagesDAO {
 		session.update(namespace+".memberUpdate", vo);
 	}
 
+	@Override
+	public void memberKindUpdate(MemberVO vo) throws Exception {
+		session.update(namespace+".memberKindUpdate", vo);
+	}
+
 }

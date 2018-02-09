@@ -75,8 +75,7 @@
 						<form id='registerForm' role="form" method="post" name="registerform">
 							<!-- 추후 로그인 추가되면 member_id는 세션값으로 -->
 							<div class="form-group">
-								<label>member_id :</label><br>
-								<input type="text" class="form-control" name="member_id">
+								<input type="hidden" class="form-control" name="member_id" value="${login.member_id }">
 							</div>
 							
 							<div class="form-group">

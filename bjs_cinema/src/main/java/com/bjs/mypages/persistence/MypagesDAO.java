@@ -12,5 +12,6 @@ public interface MypagesDAO {
 	public String qnaWriter(int qna_id) throws Exception;
 	public MemberVO memberInfo(int member_id) throws Exception;
 	public void memberUpdate(MemberVO vo) throws Exception;
+	public void memberKindUpdate(MemberVO vo) throws Exception;
 	
 }

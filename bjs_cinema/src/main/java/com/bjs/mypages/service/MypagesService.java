@@ -12,4 +12,5 @@ public interface MypagesService {
 	public String qnaWriter(int qna_id) throws Exception;
 	public MemberVO memberInfo(int member_id) throws Exception;
 	public void memberModify(MemberVO vo) throws Exception;
+	public void memberKindModify(MemberVO vo) throws Exception;
 }
