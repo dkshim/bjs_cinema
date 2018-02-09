@@ -310,11 +310,24 @@
 							
 							<div style="margin-left: 80px;">
 						
+						
+						<!-- ********** 로그인 되었을 경우 ********** -->
+						
 								<c:if test="${not empty login}">
+						
 									<span> ${login.member_name} 님 반갑습니다 :) 
-										<a href="#" onclick="fn_logout()"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 로그아웃</a>
+										<c:if test="${login.member_gender=='M' }">
+											 <i class="fa fa-male" ></i>
+										</c:if>
+										<c:if test="${login.member_gender=='F' }">
+											 <i class="fa fa-female"></i>
+										</c:if>
+										
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="/mypages/qnaRegist" onclick="fn_login()">My BJS   |   </a>
+										<a href="#" onclick="fn_logout()">로그아웃</a>
 									</span> 
-									
+								</ul>
 								</c:if>
 							
 							</div>
@@ -334,7 +347,7 @@
 	                        		 		<li><a href="/main/main">Home</a></li>
 	                        			</c:when>
 			                        	<c:otherwise>
-			                        		 <li><a href="/recom">Home</a></li>
+			                        		 <li><a href="/main/main">Home</a></li>
 			                        	</c:otherwise>
                                 	</c:choose>
 	                                	
@@ -383,7 +396,7 @@
 	                                        </ul>
 	                                    </li>
                                     </c:if>
-                                    <c:if test="${member_identify != null }">
+                                    <c:if test="${not empty login  }">
 	                                    <li><a href="/mypage/mileageList" >마이페이지</a>
 	                                        <ul class="dropdown-menu">
 	                                        	<li><a href="/mypage/mileageList">마일리지</a></li>

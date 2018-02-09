@@ -14,7 +14,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView mav )throws Exception{
-		System.out.println("postint");
+	
 		HttpSession session = request.getSession();
 		//modelMap에 model객체가지고 온다.
 		ModelMap modelMap = mav.getModelMap();
@@ -37,7 +37,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception{
-		System.out.println("preint");
+		
 		HttpSession session = request.getSession();
 		
 		//로그인 상태인데 또 로그인을 하려고 접근했을 경우.

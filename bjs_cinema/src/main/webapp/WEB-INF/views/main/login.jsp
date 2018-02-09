@@ -86,7 +86,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Welcome to my site</h3>
+                    <h3 class="panel-title" align="center">Welcome to BJS CINEMA </h3>
                 </div>
                 <div class="panel-body">
                     <form role="form" action="/main/loginPost" method="post">

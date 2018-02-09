@@ -4,7 +4,6 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
-
 import com.bjs.login.DTO.LoginDTO;
 import com.bjs.member.domain.MemberVO;
 import com.bjs.member.persistence.MemberDAO;
@@ -16,25 +15,10 @@ public class MemberServiceImpl implements MemberService {
 	@Inject
 	private MemberDAO memberDao;
 	
-	//1-1 회원 로그인 체크
+	//1-1 로그인 
 	@Override
-	public boolean loginCheck(MemberVO vo, HttpSession session) {
-		boolean result = memberDao.loginCheck(vo);
-		
-		/****true일 경우 세션에 등록한다. ****/
-		if(result) {
-			MemberVO vo2 = viewMember(vo);
-			//세션 변수 등록
-			session.setAttribute("member_identify", vo2.getMember_identify());
-			session.setAttribute("member_pwd", vo2.getMember_pwd());
-		}
-		return result;
-	}
-
-	//1-2 회원 로그인 정보
-	@Override
-	public MemberVO viewMember(MemberVO vo) {
-		return memberDao.viewMember(vo);
+	public MemberVO login(LoginDTO dto) throws Exception {	
+		return memberDao.login(dto);
 	}
 
 	//2-1 회원 로그아웃
@@ -51,11 +35,6 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
-	//로그인 처리
-	@Override
-	public MemberVO login(LoginDTO dto) throws Exception {
-		
-		return memberDao.login(dto);
-	}
+	
 
 }
