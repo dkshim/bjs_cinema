@@ -38,13 +38,6 @@
 
 <style>
 
-/* body{
-  margin-top: 100px;
-  font-family: 'Trebuchet MS', serif;
-  line-height: 1.6
-}  */
- 
- 
 ul.tabs{
   margin: 0px;
   padding: 0px;
@@ -531,9 +524,9 @@ h3 {
 								</ul>
 								<div class="select-theater" id="select-theater">
 								<ul class="select-theater">
-									<%-- <c:forEach items="${cinemaTotal}" var="list">
-										<li><a href="#">${list.cinema_region }</a></li>
-									</c:forEach> --%>
+									 <c:forEach items="${cinemaTotal}" var="list">
+										<li><a href="#">${list.CINEMA_REGION }(${list.CINEMA_COUNT })</a></li>
+									</c:forEach> 
 								</ul>
 								</div>
 							</div>
@@ -698,7 +691,7 @@ $(document).ready(function(){
 	 
 	})
 	
-	
+	//선택한 영화 
 	$('.select-movie').on("click", "li", function(){
 		var select_movie = $(this).children().text();
 		console.log(select_movie);
@@ -715,38 +708,25 @@ $(document).ready(function(){
 	})
 	
 	
-  	$(window).load(function(){
+		$('.select-theater').on("click", "li", function(){
+		var CINEMA_REGION = $(this).children().text();
+		console.log(CINEMA_REGION);
 		
-		$.ajax({
+		 $.ajax({
 			type : "POST",
-			url : "/reservation/theaterList",
+			url : "/reservation/cinemaRegion",
 			dataType : "json",
-			timeout : 10000,
 			success : function(data){
-					console.log(data);
-					var html = "";
-					
-					$('#select-theater').empty();
-					html += "<div>";
-					for(var i=1; i<=8; i++){
-						html += data
-						if(i>0){
-							html += " \ </ul>"
-						} else {
-							html += " \ </ul>"
-						}
-					}
-					
-					html +="</div>";
-					$('#select-theater').append(html);
+				
 			}
- 		})
+		
+		}) 
 	})
+	
+	
+	
 
 </script>
 
-			<!-- Start Style Switcher -->
-			<div class="switcher"></div>
-			<!-- End Style Switcher -->
 </body>
 </html>

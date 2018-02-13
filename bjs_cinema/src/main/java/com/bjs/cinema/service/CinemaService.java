@@ -1,5 +1,6 @@
 package com.bjs.cinema.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,9 +10,9 @@ public interface CinemaService {
 
 	public List<CinemaVO> cinemaList() throws Exception;
 	
-/*	public List<CinemaVO> cinemaTotal()throws Exception;*/
-	
 	public List<Map<String, Integer>> cinemaTotal() throws Exception;
 	
-	public List<CinemaVO> cinemaCount() throws Exception;
+	public List<HashMap<String, Integer>> cinemaCount() throws Exception;
+	
+	public List<CinemaVO> cinemaRegion() throws Exception;
 }

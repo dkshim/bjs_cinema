@@ -1,5 +1,6 @@
 package com.bjs.cinema.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,18 +22,18 @@ public class CinemaServiceImpl implements CinemaService {
 		return dao.cinemaList();
 	}
 	
-/*	@Override
-	public List<CinemaVO> cinemaTotal()throws Exception{
-		return dao.cinemaTotal();
-	}*/
-	
 	@Override
 	public List<Map<String, Integer>> cinemaTotal() throws Exception{
 		return dao.cinemaTotal();
 	}
 	
 	@Override
-	public List<CinemaVO> cinemaCount() throws Exception {
+	public List<HashMap<String, Integer>> cinemaCount() throws Exception{
 		return dao.cinemaCount();
+	}
+	
+	@Override
+	public List<CinemaVO> cinemaRegion() throws Exception {
+		return dao.cinemaRegion();
 	}
 }

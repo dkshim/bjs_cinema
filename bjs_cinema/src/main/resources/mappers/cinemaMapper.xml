@@ -26,10 +26,15 @@
 		]]>
 	</select> -->
 	
-	<select id="cinemaCount" resultType="map">
+	<select id="cinemaCount" resultType="HashMap">
 		select * from cinematotal
 	</select>
 
+	
+	<select id="cinemaRegion" resultType="CinemaVO">
+		select cinema_name from cinema 
+		where cinema_region = #{cinema_region}
+	</select>
 	
 </mapper>
 

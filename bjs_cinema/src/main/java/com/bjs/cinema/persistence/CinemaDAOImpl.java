@@ -1,5 +1,6 @@
 package com.bjs.cinema.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,29 +20,23 @@ public class CinemaDAOImpl implements CinemaDAO {
 	
 	private static String namespace="com.bjs.mappers.cinemaMapper";
 
-	
-/*	@Override
-	public void cinemaInsert(CinemaVO vo)throws Exception {
-		session.selectOne(namespace+".cinemaInsert", vo);
-	}*/	
-
 	@Override
 	public List<CinemaVO> cinemaList()throws Exception{
 		return session.selectList(namespace+".cinemaList");
 	}
 	
-/*	@Override
-	public List<CinemaVO> cinemaTotal()throws Exception{
-		return session.selectList(namespace+".cinemaTotal");
-	}*/
-	
 	@Override
 	public List<Map<String, Integer>> cinemaTotal() throws Exception{
 		return session.selectList(namespace+".cinemaTotal");
 	}
+
+	@Override
+	public List<HashMap<String, Integer>> cinemaCount() throws Exception{
+		return session.selectList(namespace+".cinemaCount");
+	}
 	
 	@Override
-	public List<CinemaVO> cinemaCount() throws Exception{
-		return session.selectList(namespace+".cinemaCount");
+	public List<CinemaVO> cinemaRegion() throws Exception {
+		return session.selectList(namespace+".cinemaRegion");
 	}
 }

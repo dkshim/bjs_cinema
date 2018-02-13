@@ -28,6 +28,7 @@ import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bjs.cinema.domain.CinemaVO;
@@ -61,67 +62,51 @@ public class ReservationController {
 		list = cinemaService.cinemaList();
 		
 		model.addAttribute("movieList",movieService.movieList());
+		model.addAttribute("cinemaTotal", cinemaService.cinemaCount()); 
 		model.addAttribute("cinemaList", list);
 	}
 	
-/*	//포스터 출력 
-	@RequestMapping(value="moviePoster", method=RequestMethod.POST)
-	public */
-	
+
 /*	//극장 지역, 갯수 출력
-	@RequestMapping("/theaterList")
-	@ResponseBody
-	public ResponseEntity<List<HashMap<String, Integer>>> cinemaTotal() throws Exception {
-		
-		ResponseEntity<List<HashMap<String, Integer>>> entity = null;
-		List<Map<String, Integer>> list = cinemaService.cinemaTotal();
-		List<HashMap<String, Integer>> replaceList = new ArrayList<HashMap<String,Integer>>();
-		
-		
-		for(int i=0; i<list.size(); i++){
-			HashMap<String, Integer> map = (HashMap<String, Integer>) list.get(i);
-			
-			System.out.println(map);
-			replaceList.add(map);
-		}
-		
-		try {
-			entity = new ResponseEntity<List<HashMap<String, Integer>>>(replaceList,HttpStatus.OK);
-		} catch (Exception e) {
-			e.printStackTrace();
-			entity = new ResponseEntity<List<HashMap<String, Integer>>>(HttpStatus.BAD_REQUEST);
-		}
-		return entity;
-	
-	}*/
-	//극장 지역, 갯수 출력
 	@RequestMapping(value="/theaterList", method=RequestMethod.POST)
 	@ResponseBody	
-	public ResponseEntity <List<CinemaVO>> cinemaCount() throws Exception {
+	public ResponseEntity<List<HashMap<String, Integer>>> cinemaCount() throws Exception {
+		
+		
+		ResponseEntity<List<HashMap<String, Integer>>> entity = null;
+		
+		List<HashMap<String, Integer>> list = cinemaService.cinemaCount();
+		
+		System.out.println("씨발!!"+list);
+		
+		try {
+			entity = new ResponseEntity<List<HashMap<String, Integer>>> (list, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<List<HashMap<String, Integer>>> (HttpStatus.BAD_REQUEST);
+		}
+		return entity;
+	}*/
+	
+	//극장 지역 ajax
+	@RequestMapping(value="/cinemaRegion", method=RequestMethod.GET)
+	@ResponseBody	
+	public ResponseEntity<List<CinemaVO>> cinemaCount(@RequestParam("cinema_region") String cinema_region) throws Exception {
 		
 		
 		ResponseEntity<List<CinemaVO>> entity = null;
 		
-		List<CinemaVO> list= cinemaService.cinemaCount();
-	
-		/*for(int i=0; i<list.size(); i++){
-			
-			Map<String, Integer> map = (Map<String, Integer>) list.get(i);
-			
-			System.out.println(i+ " in list for : "+map);
-			System.out.println(i+ " in key for : "+map.keySet());
-			
-			list.add(map);
-		}
-		*/
+		List<CinemaVO> list = cinemaService.cinemaRegion();
 		
-		System.out.println("나와라 씨빨!!!!!!!!!!!"+list);
+		
+		
+		System.out.println("띠빨!!"+list);
 		
 		try {
-			entity = new ResponseEntity <List<CinemaVO>> (list, HttpStatus.OK);
+			entity = new ResponseEntity<List<CinemaVO>> (list, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
-			entity = new ResponseEntity <List<CinemaVO>> (HttpStatus.BAD_REQUEST);
+			entity = new ResponseEntity<List<CinemaVO>> (HttpStatus.BAD_REQUEST);
 		}
 		return entity;
 	}
