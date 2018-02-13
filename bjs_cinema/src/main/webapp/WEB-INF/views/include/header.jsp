@@ -19,6 +19,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <link rel="stylesheet" href="/resources/css/style.css">
 <title>Insert title here</title>
 <!-- <script
   src="https://code.jquery.com/jquery-2.2.4.js"
@@ -78,6 +79,15 @@
 	}
 	
 </script> 
+<style>
+
+    .fa-male{
+    	color:blue;
+    }
+    .fa-female{
+    	color:red;
+    }
+</style>
 <!-- <script type="text/javascript">
 //sidebar 관련 script
 	$(function(){
