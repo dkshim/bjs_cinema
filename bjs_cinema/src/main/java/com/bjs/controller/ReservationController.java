@@ -11,17 +11,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionEvent;
-import javax.swing.plaf.synth.SynthSeparatorUI;
-import javax.validation.Valid;
 
-import org.apache.commons.io.IOUtils;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +27,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bjs.cinema.domain.CinemaVO;
 import com.bjs.cinema.service.CinemaService;
-import com.bjs.movie.domain.MovieVO;
 import com.bjs.movie.service.MovieService;
 
 
@@ -89,18 +82,45 @@ public class ReservationController {
 	}*/
 	
 	//극장 지역 ajax
-	@RequestMapping(value="/cinemaRegion", method=RequestMethod.GET)
+	@RequestMapping(value="/cinemaRegion", method=RequestMethod.POST)
 	@ResponseBody	
-	public ResponseEntity<List<CinemaVO>> cinemaCount(@RequestParam("cinema_region") String cinema_region) throws Exception {
+	public ResponseEntity<List<CinemaVO>> cinemaRegion(@RequestParam("cinema_region") String cinema_region) throws Exception {
 		
+		
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("컨트롤에서의 region :"+cinema_region);
 		
 		ResponseEntity<List<CinemaVO>> entity = null;
+		List<CinemaVO> list = null;		
 		
-		List<CinemaVO> list = cinemaService.cinemaRegion();
-		
-		
-		
-		System.out.println("띠빨!!"+list);
+		if(cinema_region.equals("서울")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}else if(cinema_region.equals("경기")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}else if(cinema_region.equals("인천")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}else if(cinema_region.equals("강원")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}else if(cinema_region.equals("대전/충천")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}else if(cinema_region.equals("대구")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}else if(cinema_region.equals("부산/울산")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}else if(cinema_region.equals("경산")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}else if(cinema_region.equals("광주/전라/제주")){
+			list = cinemaService.cinemaRegion(cinema_region);
+			System.out.println("jsp가는 region :"+ list);
+		}
 		
 		try {
 			entity = new ResponseEntity<List<CinemaVO>> (list, HttpStatus.OK);

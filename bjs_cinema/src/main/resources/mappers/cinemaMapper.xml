@@ -19,13 +19,6 @@
 		order by cinema_id DESC
 	</select>
 	
-<!-- 	<select id="cinemaTotal" resultType="map">
-		<![CDATA[
-		select CINEMA_REGION, count(*) from cinema
-		group by CINEMA_REGION
-		]]>
-	</select> -->
-	
 	<select id="cinemaCount" resultType="HashMap">
 		select * from cinematotal
 	</select>
@@ -35,6 +28,7 @@
 		select cinema_name from cinema 
 		where cinema_region = #{cinema_region}
 	</select>
+	
 	
 </mapper>
 

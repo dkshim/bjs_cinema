@@ -36,7 +36,7 @@ public class CinemaDAOImpl implements CinemaDAO {
 	}
 	
 	@Override
-	public List<CinemaVO> cinemaRegion() throws Exception {
-		return session.selectList(namespace+".cinemaRegion");
+	public List<CinemaVO> cinemaRegion(String cinema_region) throws Exception {
+		return session.selectList(namespace+".cinemaRegion", cinema_region);
 	}
 }

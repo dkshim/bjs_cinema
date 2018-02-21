@@ -529,6 +529,9 @@ h3 {
 									</c:forEach> 
 								</ul>
 								</div>
+								<div class="select-cinema" id="select-cinema">
+								
+								</div>
 							</div>
 						</div>
 						<div id="tab-2" class="tab-content"></div>
@@ -694,7 +697,7 @@ $(document).ready(function(){
 	//선택한 영화 
 	$('.select-movie').on("click", "li", function(){
 		var select_movie = $(this).children().text();
-		console.log(select_movie);
+		console.log("선택한영화:"+select_movie);
 		
 		$.ajax({
 			type : "POST",
@@ -708,21 +711,35 @@ $(document).ready(function(){
 	})
 	
 	
-		$('.select-theater').on("click", "li", function(){
-		var CINEMA_REGION = $(this).children().text();
-		console.log(CINEMA_REGION);
+		$('#select-theater').on("click", "li", function(){
+		var cinema_regi = $(this).children().text();
+		var	cinema_regio = cinema_regi.split('(');
+		var cinema_region = cinema_regio[0];
+		
+ 		var obj = new Object();
+		obj.cinema_region = cinema_region;
+
+		
+		console.log("선택한 지역:"+cinema_region);
+		
+		var html = "";
 		
 		 $.ajax({
 			type : "POST",
 			url : "/reservation/cinemaRegion",
-			dataType : "json",
+			data : obj,
 			success : function(data){
 				
+				$("#select-cinema").empty();
+				html += "<div class='select-cinema' id='select-cinema'>"
+				
+				
+				html +="</div>";
+				$('#select-cinema').append(html);
+				
 			}
-		
 		}) 
 	})
-	
 	
 	
 

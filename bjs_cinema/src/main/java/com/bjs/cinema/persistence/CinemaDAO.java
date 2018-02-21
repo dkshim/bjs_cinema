@@ -15,6 +15,6 @@ public interface CinemaDAO {
 	
 	public List<HashMap<String, Integer>> cinemaCount() throws Exception;
 	
-	public List<CinemaVO> cinemaRegion() throws Exception;
+	public List<CinemaVO> cinemaRegion(String cinema_region) throws Exception;
 	
 }

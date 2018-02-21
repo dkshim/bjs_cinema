@@ -33,7 +33,7 @@ public class CinemaServiceImpl implements CinemaService {
 	}
 	
 	@Override
-	public List<CinemaVO> cinemaRegion() throws Exception {
-		return dao.cinemaRegion();
+	public List<CinemaVO> cinemaRegion(String cinema_region) throws Exception {
+		return dao.cinemaRegion(cinema_region);
 	}
 }
