@@ -31,6 +31,12 @@
 			<mapping path="/main/loginPost" />
 			<beans:ref bean="loginInterceptor" />
 		</interceptor>
+		
+		<interceptor>
+			<mapping path="/mypages/qnaMyList"/>
+			<mapping path="/mypages/memberInfo"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>
 	</interceptors>
 	
 	

@@ -47,6 +47,14 @@
     <div class="slider-wrapper">
         <div class="slider">
             <div class="fs_loader"></div>
+             <div class="slide">
+               
+                <img src="/resources/img/main/little.PNG"  width="1950" height="450" data-in="fade" data-out="fade" />
+    
+                <a href="/main/main"	class="btn btn-lg btn-default" data-position="350,300" data-in="bottom"  data-out="bottom" data-delay="700" data-ease-in="easeOutBounce">예매하기 >> </a>
+            </div>
+            
+            
             <div class="slide">
                 <img src="/resources/img/main/1112.jpg" width="1920" height="700" data-in="fade" data-out="fade" />
 
@@ -56,40 +64,24 @@
                 <p class="slide-1" data-position="100,560" data-in="fade" data-out="fade" data-delay="1200">들어와 들어와 </p>
                 <p class="slide-1" data-position="150,500" data-in="fade" data-out="fade" data-delay="1600">후회 안한다니까?!</p>
 
-                <p class="slide-1a" data-position="220,770" data-in="bottom" data-out="bottom" data-delay="2000" data-ease-in="easeOutBounce">우왕굳</p>
-                <p class="slide-1a" data-position="267,698" data-in="bottom" data-out="bottom" data-delay="3200"  data-ease-in="easeOutBounce">신기하냐?</p>
-                <p class="slide-1a" data-position="314,760" data-in="bottom" data-out="bottom" data-delay="4200"  data-ease-in="easeOutBounce">으헤헤헤</p>
-                <p class="slide-1a" data-position="361,753" data-in="bottom" data-out="bottom" data-delay="5200"  data-ease-in="easeOutBounce">ㅋㅋㅋㅋㅋ</p>
+               <a href="/main/main"	class="btn btn-lg btn-default" data-position="320,370" data-in="bottom"  data-out="bottom" data-delay="700" data-ease-in="easeOutBounce">예매하기 >> </a>
             </div>
 
             <div class="slide">
                 <img src="/resources/img/main/15169432327320.jpg" width="1950" height="530" data-in="fade" data-out="fade" />
-
-                <img src="" width="400" height="490" data-position="20,400" data-in="right" data-0ut="bottom" data-delay="500"/>
-
                 <p class="slide-2 " data-position="120,900" data-in="bottom" data-out="top" data-delay="2000">블랙팬서</p>
-                <p class="slide-2a " data-position="210,900" data-in="left" data-out="right" data-delay="3000">A responsive multipurpose Theme</p>
-                <p class="slide-2b " data-position="270,900" data-in="top" data-out="bottom" data-delay="4000" data-ease-in="easeOutBounce">For Your Prestigious World !</p>
+               <a href="/main/main"	class="btn btn-lg btn-default" data-position="320,370" data-in="bottom"  data-out="bottom" data-delay="700" data-ease-in="easeOutBounce">예매하기 >> </a>
             </div>
 
-            <div class="slide">
+			<div class="slide">
                
-                <img src="/resources/img/main/eee.jpg"  width="1950" height="450" data-in="fade" data-out="fade" />
-				
-                <p class="slide-heading" data-position="130,370" data-in="top" data-out="top" data-ease-in="easeOutBounce" data-delay="1500">Electrify theme</p>
+                <img src="/resources/img/main/gh.PNG"  width="1950" height="450" data-in="fade" data-out="fade" />
 
-                <p class="sub-line" data-position="230,370" data-in="right" data-out="left" data-delay="2500">grid system and responsive design</p>
+                <p class="sub-line" data-position="220,300" data-in="right" data-out="left" data-delay="700">궁 합 </p>
 
-                <img src="images/fraction-slider/gadgets/laptop.png" width="456" height="272" data-position="115,1180" data-in="bottom" data-out="bottom" data-delay="400">
-
-                <img src="images/fraction-slider/gadgets/mack.png" width="357" height="313" data-position="90,1040" data-in="top" data-out="bottom" data-delay="200">
-
-                <img src="images/fraction-slider/gadgets/ipad.png" width="120" height="170" data-position="230,1030" data-in="left" data-out="left" data-delay="300">
-
-                <img src="images/fraction-slider/gadgets/smartphone.png" width="70" height="140" data-position="270,1320" data-in="right" data-out="right" data-delay="300">
-
-                <a href=""	class="btn btn-lg btn-default" data-position="320,370" data-in="bottom"  data-out="bottom" data-delay="3700" data-ease-in="easeOutBounce">Free Download</a>
+              <a href="/main/main"	class="btn btn-lg btn-default" data-position="320,300" data-in="bottom"  data-out="bottom" data-delay="700" data-ease-in="easeOutBounce">예매하기 >> </a>
             </div>
+           
              <div class="slide">
                
                 <img src="/resources/img/main/BJSLOGO2.PNG"  width="1950" height="450" data-in="fade" data-out="fade" />

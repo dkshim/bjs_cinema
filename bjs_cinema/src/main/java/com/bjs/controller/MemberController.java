@@ -33,6 +33,7 @@ public class MemberController {
 	//1-1 로그인 [GET]
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public void loginGET(@ModelAttribute("dto") LoginDTO dto){
+		System.out.println("login1-1");
 		
 	}
 	
@@ -87,5 +88,16 @@ public class MemberController {
 		System.out.println(member);
 		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/main/memberSuccess";
+	}
+	
+	//4-3 회원가입 조항
+	@RequestMapping(value="loginProvision",method=RequestMethod.GET)
+	public void loginProvision(){
+		
+	}
+	
+	@RequestMapping(value="memberSuccess",method=RequestMethod.GET)
+	public void registSuccess(){
+		
 	}
 }

@@ -302,12 +302,12 @@
 								</c:if>	
 								<c:if test="${empty login }">
 									<li>
-										<a href="/main/memberRegister" onclick="fn_login()">회원가입 | </a>
+										<a href="/main/loginProvision" >회원가입 | </a>
 									</li>
 								</c:if>	
 								<c:if test="${empty login}">
 									<li>
-										<a href="/mypages/qnaMyList" onclick="fn_login()">My BJS | </a>
+										<a href="/mypages/memberInfo" >My BJS | </a>
 									</li>
 								</c:if>	
 								<c:if test="${empty login}">

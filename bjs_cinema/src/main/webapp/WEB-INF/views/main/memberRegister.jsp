@@ -46,7 +46,7 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="page_title">
-							<h2>회원가입</h2>
+							<h2>회원가입 <i class="fa fa-user-plus" ></i></h2>
 						</div>
 						<nav id="breadcrumbs">
 							<ul>
@@ -58,13 +58,13 @@
 				</div>
 			</div>
 		</section> 
-
+	<br>
 	<div class="container">
 		<form role="form" method="post">
 			<table class="table table-bordered table-hover" style="text-align: center; border:1px solid #dddddd">
 			<thead>
 				<tr>
-					<th colspan="3"><img src="/resources/img/base.jpg" width="100%" height="100px"><h4 align="center">회원 등록 양식</h4></th>
+					<th colspan="3"><img src="/resources/img/base.jpg" width="100%" height="100px"><h3 align="center">회원 등록 양식</h3></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -79,11 +79,11 @@
 					<td colspan="2">
 					<input class="form-control" type="password" id="member_pwd" name="member_pwd" placeholder="PassWord"></td> 
 				</tr>
-				<!-- <tr>
-					<td style="width : 110px;"><h5>비밀번호 확인</h5></td>
+				 <tr>
+					<td style="width : 110px;"><h5>비밀번호 확인 (*) </h5></td>
 					<td colspan="2">
-					<input class="form-control" type="password" id="member_pwd2" name="member_pwd2" maxLength="30"></td>
-				</tr> -->
+					<input class="form-control" type="password" id="member_pwd2" name="member_pwd2" placeholder="PassWord"></td>
+				</tr>
 				<tr>
 					<td style="width : 110px;"><h5>이름 (*)</h5></td>
 					<td colspan="2">
